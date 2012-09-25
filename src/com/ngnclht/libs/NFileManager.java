@@ -33,6 +33,7 @@ public class NFileManager {
 	private String currentPath;
 	private final int BUFFER = 2048;
 	private long fileSize;
+	private ArrayList<String> imgList;
 	private static boolean sortAcescing;
 
 	public NFileManager(Context context) {
@@ -62,7 +63,7 @@ public class NFileManager {
 				SettingsActivity.KEY_SETTING_SORTINGVECTOR, 1) == SettingsActivity.SORT_ASCENDING) ? true
 				: false;
 		currentDirContent = new ArrayList<String>();
-		
+		imgList			  = new ArrayList<String>();
 		refreshCurrentDirContent();
 	}
 	public void gotoHome(){
@@ -446,6 +447,8 @@ public class NFileManager {
 	public void refreshCurrentDirContent() {
 		if (!currentDirContent.isEmpty())
 			currentDirContent.clear();
+		if (!imgList.isEmpty())
+			imgList.clear();
 
 		File file = new File(getCurrentDir());
 
@@ -457,13 +460,35 @@ public class NFileManager {
 			for (int i = 0; i < len; i++) {
 				if (settings.getBoolean(
 						SettingsActivity.KEY_SETTINGFILE_HIDDEN, false)) {
-					if (list[i].toString().charAt(0) != '.')
+					if (list[i].toString().charAt(0) != '.'){
 						currentDirContent.add(list[i]);
+						if(list[i].lastIndexOf(".")!=-1){
+							String ext = list[i].substring(list[i].lastIndexOf(".")+1);
+							if (ext.equalsIgnoreCase("png") ||
+									ext.equalsIgnoreCase("jpg") ||
+									ext.equalsIgnoreCase("jpeg")|| 
+									ext.equalsIgnoreCase("gif") ||
+									ext.equalsIgnoreCase("tiff")) {
+								imgList.add(list[i]);
+							}
+						}
+					}
 
 				} else {
 					currentDirContent.add(list[i]);
+					if(list[i].lastIndexOf(".")!=-1){
+						String ext = list[i].substring(list[i].lastIndexOf(".")+1);
+						if (ext.equalsIgnoreCase("png") ||
+								ext.equalsIgnoreCase("jpg") ||
+								ext.equalsIgnoreCase("jpeg")|| 
+								ext.equalsIgnoreCase("gif") ||
+								ext.equalsIgnoreCase("tiff")) {
+							imgList.add(getCurrentPath()+"/"+list[i]);
+						}
+					}
 				}
 			}
+			// sorting options
 			switch (settings.getInt(SettingsActivity.KEY_SETTING_SORTING, 1)) {
 
 			case SettingsActivity.SORT_BYNAME:
@@ -529,6 +554,9 @@ public class NFileManager {
 	}
 	public ArrayList<String> getCurrentDirContent() {
 		return currentDirContent;
+	}
+	public ArrayList<String> getImgList() {
+		return imgList;
 	}
 	private static final Comparator alph = new Comparator<String>() {
 		@Override

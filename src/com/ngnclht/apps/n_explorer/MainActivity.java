@@ -76,13 +76,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         initViewControl();
     }
-//	public final String KEY_NFILEMAN = "nfiman";
-//	@Override
-//	protected void onSaveInstanceState(Bundle outState) {
-//		// TODO Auto-generated method stub
-//		outState.get
-//		super.onSaveInstanceState(outState);
-//	}
     public void initViewControl(){
     	// TODO set background
     	RelativeLayout amain_rl_wrapper = (RelativeLayout) findViewById(R.id.amain_rl_wrapper);

@@ -5,6 +5,7 @@ import java.io.File;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -71,9 +72,15 @@ public class NFolderView extends LinearLayout{
 			ff_text.setTextSize(res.getDimension(R.dimen.grid_list_elarge_textsize));
 			if(ff_detail != null) ff_detail.setTextSize(res.getDimension(R.dimen.grid_list_elarge_textsize_small));
 			break;
-			
 		}
 	}
+	public int getImageWidth(){
+		return ff_img.getWidth();
+	}
+	public int getImageHeight(){
+		return ff_img.getHeight();
+	}
+	
 	public void setImage(){
 		if(file.isDirectory()){
 			switch (settings.getInt(SettingsActivity.KEY_SETTINGTHEME_FOLDERSTYLE, 1)) {
@@ -100,6 +107,9 @@ public class NFolderView extends LinearLayout{
 			ff_img.setImageResource(fileIcon);
 		}
 	}
+	public void setImageBitmap(Bitmap bmp){
+		ff_img.setImageBitmap(bmp);
+	}
 	public void setItemSelected(){
 		selected = true;
 		ff_text.setTextColor(res.getColor(R.color.Cyan));
@@ -119,7 +129,7 @@ public class NFolderView extends LinearLayout{
 		this.ff_text.setText(text);
 	}
 	public String getText(){
-		return this.ff_text.toString();
+		return this.ff_text.getText().toString();
 	}
 	
 }

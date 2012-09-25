@@ -29,22 +29,22 @@ import android.widget.Toast;
 import com.ngnclht.libs.NFileManager;
 
 public class NContentView extends LinearLayout{
-	private NFileManager nf;
-	private SharedPreferences settings;
-	private Resources res;
-	private Context context;
-	private ListView lv_ffcontent;
-	private GridView gv_ffcontent;
-	private String selectSingle;
-	private ListGridAdapter lga;
-	private int listType;
-	private boolean view;
-	private ModelFileIcon modelFileIcons;
-	private ModelFolderStyle modelFolderStyle;
-	private ArrayList<String> selectList;
-	private ArrayList<String> clipBoard;
-	private boolean multiselect = false;
-	private boolean flagCut 	= false;
+	private NFileManager 		nf;
+	private SharedPreferences 	settings;
+	private Resources 			res;
+	private Context 			context;
+	private ListView 			lv_ffcontent;
+	private GridView 			gv_ffcontent;
+	private String 				selectSingle;
+	private ListGridAdapter 	lga;
+	private int 				listType;
+	private boolean 			view;
+	private ModelFileIcon 		modelFileIcons;
+	private ModelFolderStyle 	modelFolderStyle;
+	private ArrayList<String> 	selectList;
+	private ArrayList<String> 	clipBoard;
+	private boolean 			multiselect = false;
+	private boolean 				flagCut 	= false;
 	private ArrayList<NFolderView> tmpViewSelected;
 	private NRibbonView nRibbon;
 	
@@ -113,7 +113,7 @@ public class NContentView extends LinearLayout{
 			NRibbonButtonView btnCut  = nRibbon.getButtonByText(R.string.amain_button_function_cut);
 			btnCopy.setEnable();
 			btnCut.setEnable();
-			Log.e("onGridListItemClick", "" + String.valueOf(selectList.toString()));
+			Log.v("onGridListItemClick", "" + String.valueOf(selectList.toString()));
 		}
 	}
 	public void selectAll(){
@@ -154,12 +154,12 @@ public class NContentView extends LinearLayout{
 			nf.gotoDir(des.getPath());
 			updateView();
 		}else
-		Toast.makeText(context, res.getString(R.string.amain_code_toast_permission), Toast.LENGTH_LONG).show();
+		Toast.makeText(context, res.getString(R.string.amain_code_toast_permission), Toast.LENGTH_SHORT).show();
 	}
 	
 	protected void onFileClicked(File des) {
 		String item_ext = des.getPath().substring(des.getPath().lastIndexOf("."));
-		Log.e("onFileClicked: ", "" + String.valueOf(item_ext));
+		Log.v("onFileClicked: ", "" + String.valueOf(item_ext));
 		// if click a audio file
 		if (item_ext.equalsIgnoreCase(".mp3") || 
    			 item_ext.equalsIgnoreCase(".m4a")||
@@ -213,7 +213,7 @@ public class NContentView extends LinearLayout{
 			try {
 				context.startActivity(i);
 			} catch (Exception e) {
-				Toast.makeText(context, res.getString(R.string.amain_code_toast_noapp_avaible), Toast.LENGTH_LONG)
+				Toast.makeText(context, res.getString(R.string.amain_code_toast_noapp_avaible), Toast.LENGTH_SHORT)
 				.show();
 			}
 		}
@@ -256,20 +256,20 @@ public class NContentView extends LinearLayout{
 		lv_ffcontent.setVisibility(GONE);
 		switch (settings.getInt(SettingsActivity.KEY_SETTING_ICONSIZE, 1)) {
 		case SettingsActivity.ICONSIZE_SMALL:
-			Log.e("NContentFolderView", "" + String.valueOf("icon small"));
+			Log.v("NContentFolderView", "" + String.valueOf("icon small"));
 			gv_ffcontent.setColumnWidth((int)res.getDimension(R.dimen.grid_list_small)+NFolderView.WIDTHPLUS);
 			break;
 		case SettingsActivity.ICONSIZE_NORMAL:
-			Log.e("NContentFolderView", "" + String.valueOf("icon normal"));
+			Log.v("NContentFolderView", "" + String.valueOf("icon normal"));
 			gv_ffcontent.setColumnWidth((int)res.getDimension(R.dimen.grid_list_normal)+NFolderView.WIDTHPLUS);
 			break;
 		case SettingsActivity.ICONSIZE_LARGE:
-			Log.e("NContentFolderView", "" + String.valueOf("icon large"));
+			Log.v("NContentFolderView", "" + String.valueOf("icon large"));
 			gv_ffcontent.setColumnWidth((int)res.getDimension(R.dimen.grid_list_large)+NFolderView.WIDTHPLUS);
 			break;
 		case SettingsActivity.ICONSIZE_ELARGE:
 			gv_ffcontent.setColumnWidth((int)res.getDimension(R.dimen.grid_list_elarge)+NFolderView.WIDTHPLUS);
-			Log.e("NContentFolderView", "" + String.valueOf("icon elarge"));
+			Log.v("NContentFolderView", "" + String.valueOf("icon elarge"));
 			break;
 		}
 	}
@@ -279,11 +279,11 @@ public class NContentView extends LinearLayout{
 	public void toogleMultiSelect(){
 		if(isMultiselect()){
 			inativeMultiselect();
-			Toast.makeText(context, res.getString(R.string.amain_code_toast_multiselect_inactive), Toast.LENGTH_LONG).show();
+			Toast.makeText(context, res.getString(R.string.amain_code_toast_multiselect_inactive), Toast.LENGTH_SHORT).show();
 		}
 		else{
 			activeMultiselect();
-			Toast.makeText(context, res.getString(R.string.amain_code_toast_multiselect_active), Toast.LENGTH_LONG).show();
+			Toast.makeText(context, res.getString(R.string.amain_code_toast_multiselect_active), Toast.LENGTH_SHORT).show();
 		}
 		
 	}
@@ -330,27 +330,27 @@ public class NContentView extends LinearLayout{
 		return isEmpty;
 	}
 	public ArrayList<String> getClipBoard() {
-		Log.e("Clipboard", " now " + String.valueOf(clipBoard.toString()));
+		Log.v("Clipboard", " now " + String.valueOf(clipBoard.toString()));
 		return clipBoard;
 	}
 	public void setClipBoard(ArrayList<String> clipBoard) {
 		this.clipBoard = clipBoard;
-		Log.e("Clipboard", " now " + String.valueOf(clipBoard.toString()));
+		Log.v("Clipboard", " now " + String.valueOf(clipBoard.toString()));
 	}
 	public void addToClipboard(String path){
 		
 		if (clipBoard == null) {
 			clipBoard = new ArrayList<String>();
 		}
-		Log.e("addToClipboard", " add " + String.valueOf(path));
+		Log.v("addToClipboard", " add " + String.valueOf(path));
 		clipBoard.add(path);
-		Log.e("Clipboard", " now " + String.valueOf(clipBoard.toString()));
+		Log.v("Clipboard", " now " + String.valueOf(clipBoard.toString()));
 	}
 	public void copyToClipboard(String path){
 		clipBoard = new ArrayList<String>();
 		clipBoard.add(path);
-		Log.e("setClipboard", " set " + String.valueOf(path));
-		Log.e("Clipboard", " now " + String.valueOf(clipBoard.toString()));
+		Log.v("setClipboard", " set " + String.valueOf(path));
+		Log.v("Clipboard", " now " + String.valueOf(clipBoard.toString()));
 	}
 	public void  clearClipboard(){
 		clipBoard = null;
@@ -373,4 +373,38 @@ public class NContentView extends LinearLayout{
 	public NRibbonView getnRibbon() {
 		return nRibbon;
 	}
+//	public void prepareThumbnall(){
+//		String sub_ext = v.getText().substring(v.getText().lastIndexOf(".")+1);
+//		if (sub_ext.equalsIgnoreCase("png") ||
+//				   sub_ext.equalsIgnoreCase("jpg") ||
+//				   sub_ext.equalsIgnoreCase("jpeg")|| 
+//				   sub_ext.equalsIgnoreCase("gif") ||
+//				   sub_ext.equalsIgnoreCase("tiff")) {
+//			if(settings.getBoolean(SettingsActivity.KEY_SETTINGFILE_IMGTHUMB, false)){
+//				thumbnailCreator = new ThumbnailCreator(v.getWidth(), v.getHeight());
+//				
+//				Bitmap thumb = thumbnailCreator.isBitmapCached(file.getPath());
+//	
+//				if (thumb == null) {
+//					final Handler handle = new Handler(new Handler.Callback() {
+//						public boolean handleMessage(Message msg) {
+//							notifyDataSetChanged();
+//							
+//							return true;
+//						}
+//					});
+//									
+//					thumbnailCreator.createNewThumbnail(mDataSource, mFileMang.getCurrentDir(), handle);
+//					
+//					if (!thumbnailCreator.isAlive()) 
+//						thumbnailCreator.start();
+//					
+//				} else {
+//					mViewHolder.icon.setImageBitmap(thumb);
+//				}
+//			
+//			}
+//		}
+//
+//	}
 }

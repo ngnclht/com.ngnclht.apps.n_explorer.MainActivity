@@ -28,6 +28,7 @@ public class ListGridAdapter extends BaseAdapter{
 	private NContentView nContentView;
 	private ThumbnailCreator thumbnailCreator; 
 	public  ArrayList<NFolderView> nSelected;
+	public ArrayList<String> imgList;
 	public Resources res;
 	public SharedPreferences settings;
 	public ListGridAdapter(Context context, ArrayList<String> data, NFileManager  nf,ModelFileIcon mficon, ModelFolderStyle mfstyle, NContentView nctv) {
@@ -42,6 +43,7 @@ public class ListGridAdapter extends BaseAdapter{
 		settings = context.getSharedPreferences("SettingsActivity", context.MODE_WORLD_WRITEABLE);
 		li = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		nSelected = new ArrayList<NFolderView>();
+		imgList   = new ArrayList<String>();
 	}
 	@Override
 	public int getCount() {
@@ -67,46 +69,46 @@ public class ListGridAdapter extends BaseAdapter{
 		File f = new File(nf.getCurrentPath()+"/"+nf.getCurrentDirContent().get(position));
 		
 		NFolderView v = new NFolderView(context, null,f,mficon,mfstyle);
+		
 		v.setText(data.get(position));
 		v.setImage();
+		//  check weather item is image
+		String item_ext = f.getPath().substring(f.getPath().lastIndexOf(".")+1);
+		if (item_ext.equalsIgnoreCase("png") ||
+				item_ext.equalsIgnoreCase("jpg") ||
+				item_ext.equalsIgnoreCase("jpeg")|| 
+				item_ext.equalsIgnoreCase("gif") ||
+				item_ext.equalsIgnoreCase("tiff")) {
+			
+				if(settings.getBoolean(SettingsActivity.KEY_SETTINGFILE_IMGTHUMB, true)){
+					thumbnailCreator = new ThumbnailCreator(54, 54);
+					
+					Bitmap thumb = thumbnailCreator.isBitmapCached(f.getPath());
 		
+					if (thumb == null) {
+						final Handler handle = new Handler(new Handler.Callback() {
+							public boolean handleMessage(Message msg) {
+								notifyDataSetChanged();
+								return true;
+							}
+						});
+										
+						thumbnailCreator.createNewThumbnail(nf.getImgList(), nf.getCurrentDir(), handle);
+						
+						if (!thumbnailCreator.isAlive()) 
+							thumbnailCreator.start();
+						
+					} else {
+						v.setImageBitmap(thumb);
+					}
+			}
+		}
 		if(nContentView.isMultiselect() &&nContentView.getSelectList()!=null&& nContentView.getSelectList().indexOf(nf.getCurrentDir()+"/"+data.get(position)) != -1){
 			v.setItemSelected();
 			nSelected.add(v);
 		}else{
 			v.setItemUnselected();
 		}
-//		String sub_ext = v.getText().substring(v.getText().lastIndexOf(".")+1);
-//		if (sub_ext.equalsIgnoreCase("png") ||
-//				   sub_ext.equalsIgnoreCase("jpg") ||
-//				   sub_ext.equalsIgnoreCase("jpeg")|| 
-//				   sub_ext.equalsIgnoreCase("gif") ||
-//				   sub_ext.equalsIgnoreCase("tiff")) {
-//			if(settings.getBoolean(SettingsActivity.KEY_SETTINGFILE_IMGTHUMB, false)){
-//				thumbnailCreator = new ThumbnailCreator(v.getWidth(), v.getHeight());
-//				
-//				Bitmap thumb = thumbnailCreator.isBitmapCached(file.getPath());
-//	
-//				if (thumb == null) {
-//					final Handler handle = new Handler(new Handler.Callback() {
-//						public boolean handleMessage(Message msg) {
-//							notifyDataSetChanged();
-//							
-//							return true;
-//						}
-//					});
-//									
-//					thumbnailCreator.createNewThumbnail(mDataSource, mFileMang.getCurrentDir(), handle);
-//					
-//					if (!thumbnailCreator.isAlive()) 
-//						thumbnailCreator.start();
-//					
-//				} else {
-//					mViewHolder.icon.setImageBitmap(thumb);
-//				}
-//			
-//			}
-//		}
 		return v;
 	}
 	public void stopThumbnailThread() {
