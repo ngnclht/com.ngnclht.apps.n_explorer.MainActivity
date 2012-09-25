@@ -1,0 +1,261 @@
+<resources>
+
+    <string name="app_name">N-Explorer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main">N-Explorer</string>
+    <string name="Ok_button">OK</string>
+    <string name="skip_button">Skip</string>
+    <string name="Cancel_button">Cancel</string>
+	<!-- amain menu -->
+	<string name="amain_menu_add">Add</string>
+    <string name="amain_menu_settings">Config</string>
+    <string name="amain_menu_help">Help</string>
+    <string name="amain_menu_about">About</string>
+    <string name="amain_menu_exit">Exit</string>
+    	
+    <!-- amain ribbon title-->
+    <string name="amain_button_ribbon_homeContext">Home</string>
+    <string name="amain_button_ribbon_editContext">Edit</string>
+    <string name="amain_button_ribbon_toolsContext">Tools</string>
+    <!-- amain ribbon toolbar-->
+    <string name="amain_button_function_add">Add</string>
+    <string name="amain_button_function_search">Search</string>
+    <string name="amain_button_function_favourite">Favourite</string>
+    <string name="amain_button_function_multiselect">Multiselect</string>
+    <string name="amain_button_function_folderup">Up</string>
+    <string name="amain_button_function_view">List</string>
+    <string name="amain_button_function_viewList">List</string>
+    <string name="amain_button_function_viewMatrix">Matrix</string>
+	<string name="amain_button_function_info">Info</string>
+    <string name="amain_button_function_menu">Menu</string>	
+    <string name="amain_button_function_appman">Appsman</string>	
+    <string name="amain_button_function_backup">Backup</string>	
+    <string name="amain_button_function_edit">Edit</string>	
+    <string name="amain_button_function_extract">Extract</string>	
+    <string name="amain_button_function_help">Help</string>	
+    <string name="amain_button_function_home">Home</string>	
+    <string name="amain_button_function_refresh">Refresh</string>	
+    <string name="amain_button_function_save">Save</string>	
+    <string name="amain_button_function_setting">Config</string>	
+    <string name="amain_button_function_zip">Add to zip</string>	
+    <string name="amain_button_function_delete">Delete</string>
+    <string name="amain_button_function_copy">Copy</string>
+    <string name="amain_button_function_paste">Paste</string>
+    <string name="amain_button_function_cut">Cut</string>
+    <string name="amain_button_function_rename">Rename</string>
+    <string name="amain_button_function_cancel">Cancel</string>
+    
+    <string name="amain_button_function_send">Send</string>
+    
+    <!-- asetting -->
+    <!-- group display setting -->
+    <string name="asetting_group_display">Display Settings</string>
+    
+    <string name="asetting_layout">Layout Settings</string>
+    <string name="asetting_layout_des">Hide or show some UI options</string>
+    <string name="asetting_theme">Themes Settings</string>
+    <string name="asetting_theme_des">Choose themes or color</string>
+    <string name="asetting_file">File Settings</string>
+    <string name="asetting_file_des">File or folder options</string>
+    <!-- group view setting -->
+    <string name="asetting_group_view">Views Settings</string>
+    
+    <string name="asetting_view">Views</string>
+    <string name="asetting_view_des">Icons,List, Detail</string>
+    <string name="asetting_iconsize">Icons Size</string>
+    <string name="asetting_iconsize_des">Normal, Small, Large</string>
+    <string name="asetting_sorting">Sorting</string>
+    <string name="asetting_sorting_des">Sort file by name, size or other</string>
+    <!-- group path setting -->
+    <string name="asetting_group_path">Path Settings</string>
+    
+    <string name="asetting_homedir">Home Directory</string>
+    <string name="asetting_homedir_des">Set Home Directory when app. start</string>
+    <string name="asetting_uptoroot">Up to Root</string>
+    <string name="asetting_uptoroot_des">Enable up to (/) directory</string>
+    <string name="asetting_appsbackupdir">Apps Backup Dir</string>
+    <string name="asetting_appsbackupdir_des">Set apps. backup directory</string>
+    <!-- group other setting -->
+    <string name="asetting_group_other">Other Settings</string>
+    
+    <string name="asetting_security">Security Settings</string>
+    <string name="asetting_security_des">Set security settings</string>
+    <string name="asetting_hidelist">Hidden File List</string>
+    <string name="asetting_hidelist_des">Manager your hidden file</string>
+    
+    
+    <!-- group root settings -->
+    <string name="asetting_group_root">Root Permission Settings</string>
+    
+    <string name="asetting_rootexplorer">Use as Root Explorer</string>
+    <string name="asetting_rootexplorer_des">Only for rooted device</string>
+    <string name="asetting_mountfilesystem">Mount System File</string>
+    <string name="asetting_mountfilesystem_des">Mount /, /system as writeable</string>
+    <string name="asetting_autobackupapp">Backup Apss</string>
+    <string name="asetting_autobackupapp_des">Auto backup before unistall</string>
+    <!-- amain setting-dialog -->
+    <string name="asetting_dialog_homedir_title">Home Directory</string>
+    <string name="asetting_dialog_appsbkdir_title">Apps Backup Directory</string>
+    
+    
+    <string name="asetting_dialog_typeyourdir_hint">Type here</string>
+    <string name="asetting_dialog_direrrors_errors">Not a directory, please input a valid directory</string>
+    <string name="asetting_dialog_direrrors_empty">Please input the path</string>
+    
+    <string name="asetting_dialog_sorting_title">Sort By</string>
+    <string name="asetting_dialog_sorting_byname">Name</string>
+    <string name="asetting_dialog_sorting_bysize">Size</string>
+    <string name="asetting_dialog_sorting_bydate">Date</string>
+    <string name="asetting_dialog_sorting_byextension">Extension</string>
+    
+    <string name="asetting_dialog_iconsize_title">Icons Size</string>
+    <string name="asetting_dialog_iconsize_elarge">Extra Large</string>
+    <string name="asetting_dialog_iconsize_large">Large</string>
+    <string name="asetting_dialog_iconsize_normal">Normal</string>
+    <string name="asetting_dialog_iconsize_small">Small</string>
+    
+    <string name="asetting_dialog_view_title">View</string>
+    <string name="asetting_dialog_view_matrix">Matrix</string>
+    <string name="asetting_dialog_view_list">List</string>
+    <string name="asetting_dialog_view_listdetail">List and Detail</string>
+    
+    <!-- amain setting themes -->
+    <string name="asettingtheme_themes">Select Themes</string>
+    <string name="asettingtheme_themes_des">Choose themes</string>
+    <string name="asettingtheme_themes_simplecolor">Simple color</string>
+    <string name="asettingtheme_themes_simplecolor_des">Only in simple color themes</string>
+    <string name="asettingtheme_themes_custombackground">Custom background</string>
+    <string name="asettingtheme_themes_custombackground_des">Only in custom background themes</string>
+    <string name="asettingtheme_themes_folderstyle">Folder Style</string>
+    <string name="asettingtheme_themes_folderstyle_des">Set folder style</string>
+    
+    <string name="asettingtheme_dialog_theme_title">Select Theme</string>
+    <string name="asettingtheme_dialog_theme_simple">Simple Color</string>
+    <string name="asettingtheme_dialog_theme_custom">Custom Background</string>
+    
+    <string name="asettingtheme_dialog_folderstyle_title">Folder Style</string>
+    <string name="asettingtheme_dialog_folderstyle_style1">Style 1</string>
+    <string name="asettingtheme_dialog_folderstyle_style2">Style 2</string>
+    <string name="asettingtheme_dialog_folderstyle_style3">Style 3</string>
+    <string name="asettingtheme_dialog_folderstyle_style4">Style 4</string>
+    
+    <!-- amain setting layout -->
+    <string name="asettinglayout_ribbontitle">Ribbon Title</string>
+    <string name="asettinglayout_ribbontitle_des">Show or hide ribbon title</string>
+    <string name="asettinglayout_ribbonbutton">Ribbon Button</string>
+    <string name="asettinglayout_ribbonbutton_des">Show or hide ribbon button</string>
+    <string name="asettinglayout_clipboard">Clipboard Sliding</string>
+    <string name="asettinglayout_clipboard_des">Show or hide Clipboard Sliding</string>
+    <string name="asettinglayout_maxhistory">Max History</string>
+    <string name="asettinglayout_maxhistory_des">Maximum size of history</string>
+    <string name="asettinglayout_language">Language</string>
+    <string name="asettinglayout_language_des">Select language</string>
+    
+    <string name="asettinglayout_dialog_maxhistory_title">Max History</string>
+    <string name="asettinglayout_dialog_maxhistory_msg">Please enter a number</string>
+    <string name="asettinglayout_dialog_lang_title">Select Languages</string>
+    
+    <string name="asettinglayout_dialog_lang_auto">Auto</string>
+    <string name="asettinglayout_dialog_lang_en">English</string>
+    <string name="asettinglayout_dialog_lang_vi">Vietnamese</string>
+    
+     <!-- amain setting file -->
+    <string name="asettingfile_hidden">Hidden File</string>
+    <string name="asettingfile_hidden_des">Show hidden files(name start by.a)</string>
+    <string name="asettingfile_imgthumbnall">Images Thumbnall</string>
+    <string name="asettingfile_imgthumbnall_des">Show images thumbnall</string>
+    
+     <!-- amain setting security -->
+    <string name="asettingsecurity_startprotect">Start Protect</string>
+    <string name="asettingsecurity_startprotect_des">Need password to start protect</string>
+    <string name="asettingsecurity_changepass">Password</string>
+    <string name="asettingsecurity_changepass_des">Change or create a password</string>
+    
+    <string name="asettingsecurity_dialog_changepass_title">Change password</string>
+    <string name="asettingsecurity_dialog_enterpass_title">Enter password</string>
+    <string name="asettingsecurity_dialog_changepass_oldpass">Old password</string>
+    <string name="asettingsecurity_dialog_changepass_newpass">New password</string>
+    <string name="asettingsecurity_dialog_changepass_retypepass">Retype password</string>
+    
+    <string name="asettingsecurity_dialog_changepass_msg_empty">Please input all fields</string>
+    <string name="asettingsecurity_dialog_changepass_msg_length">Min password length 6 chars</string>
+    <string name="asettingsecurity_dialog_changepass_msg_incorrect">Password is incorrect</string>
+    <string name="asettingsecurity_dialog_changepass_msg_difference">Two password is diffence</string>
+    <string name="asettingsecurity_dialog_changepass_msg_success">Password changed</string>
+    
+    <!-- String on code -->
+    <string name="amain_code_toast_permission">Can\'t access due to permission. Please enable root mode!</string>
+    <string name="amain_code_toast_noapp_avaible">No apps avaible for this file type</string>
+    <string name="amain_code_toast_multiselect_active">Multiselect is readdy</string>
+    <string name="amain_code_toast_multiselect_inactive">Multiselect was canceled</string>
+    <string name="amain_code_toast_againtoexit">Press again to exit</string>
+    
+    <string name="amain_code_cmenu_headertitle">Operator</string>
+    <string name="amain_code_cmenu_copy">Copy</string>
+    <string name="amain_code_cmenu_cut">Cut</string>
+    <string name="amain_code_cmenu_delete">Delete</string>
+    <string name="amain_code_cmenu_hide">Hide</string>
+    <string name="amain_code_cmenu_open">Open</string>
+    <string name="amain_code_cmenu_paste">Paste</string>
+    <string name="amain_code_cmenu_properties">Properties</string>
+    <string name="amain_code_cmenu_selectall">Select All</string>
+    <string name="amain_code_cmenu_selectinvert">Select Invert</string>
+    <string name="amain_code_cmenu_setfavour">Add to favourite</string>
+    <string name="amain_code_cmenu_sethome">Set as home directory</string>
+    <string name="amain_code_cmenu_shortcut">Create shortcut</string>
+    
+    <string name="amain_code_cmenu_delete_dialog_title">Confirm delete</string>
+    <string name="amain_code_cmenu_delete_dialog_success">Item deleted</string>
+    <string name="amain_code_cmenu_sethomesuccess">Set home directory success</string>
+    <string name="amain_code_cmenu_setfavoursuccess">Added to favourite</string>
+    <string name="amain_code_cmenu_setfavourfailed">Item is areaddy in favourite list</string>
+    <string name="amain_code_cmenu_sethidesuccess">Hidden success</string>
+    <string name="amain_code_cmenu_sethidefailed">Item is areaddy in hidden list</string>
+    
+    <string name="amain_code_cmenu_createshortcutfailed">Can create shortcut for a folder</string>
+    
+    <string name="pr_dialog_calculating">Calculating &#8230;</string>
+    <string name="pr_dialog_copying">Copying &#8230;</string>
+    <string name="pr_dialog_message_wait">Please wait a moment!</string>
+    <string name="pr_dialog_moving">Moving &#8230;</string>
+    <string name="pr_dialog_deleting">Deleteing &#8230;</string>
+    <string name="pr_dialog_searching">Searching &#8230;</string>
+    <string name="pr_dialog_searching_errors">Not found any file</string>
+    <string name="pr_dialog_ziping">Ziping &#8230;</string>
+    <string name="pr_dialog_unziping">UnZiping &#8230;</string>
+    <string name="pr_dialog_error">An error ecurer</string>
+    
+    <string name="dialog_dinfor_size">Size</string>
+    <string name="dialog_dinfor_contain">Contains</string>
+    <string name="dialog_dinfor_modified">Modified</string>
+    <string name="dialog_dinfor_path">Path</string>
+    <string name="dialog_dinfor_type">Type</string>
+    <string name="dialog_dinfor_readable">Readable</string>
+    <string name="dialog_dinfor_writeable">Writeable</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="gb">Gb</string>
+    <string name="mb">Mb</string>
+    <string name="kb">Kb</string>
+    
+    <string name="_file">File</string>
+    <string name="_folder">Folder</string>
+    <string name="_files">Files</string>
+    <string name="_folders">Folders</string>
+    
+    <string name="_login">Please input password to login</string>
+    
+    <string name="paste_fileexist_title">Some files is exist, click ok to override, cancel to skip file</string>
+    <string name="paste_fileexist">File is exist, override it?</string>
+    <string name="paste_invalidpath">Invalid path</string>
+    <string name="paste_skipexist">Some files was created</string>
+    <string name="menu_new_select">Create new</string>
+    <string name="menu_new_enterpath">Enter name</string>
+    <string name="menu_new_success">Success created </string>
+    <string name="menu_new_error">Can not create </string>
+    <string name="ribbon_button_cannot_up">This file is root, can not go up</string>
+    
+    <string name="menu_about_title">About N-Explorer 0.9 - beta</string>
+    <string name="menu_about_infor">Nam Nguyen Giang -Hoang Nguyen IT Training Center \nVinanewstar.vn@gmail.com  +84985050907  \nHa Tinh - Vietnam</string>
+    
+</resources>

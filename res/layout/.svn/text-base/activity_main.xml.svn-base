@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/amain_rl_wrapper"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg01" > <!-- end  @+id/amain_rl_ribbon -->
+
+    <com.ngnclht.apps.n_explorer.NRibbonView
+        android:id="@+id/amain_nribbon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </com.ngnclht.apps.n_explorer.NRibbonView>
+
+    <com.ngnclht.apps.n_explorer.NContentView
+        android:id="@+id/amain_ncontent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/amain_nribbon" >
+    </com.ngnclht.apps.n_explorer.NContentView>
+
+   <!-- <SlidingDrawer
+        android:id="@+id/slidingClipboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:content="@+id/content"
+        android:handle="@+id/handle"
+        android:topOffset="20dp" >
+
+        <ImageButton
+            android:id="@+id/handle"
+            android:layout_width="@dimen/amain_handdle_button_width"
+            android:layout_height="@dimen/amain_handdle_button_heigth"
+            android:layout_marginBottom="0dp"
+            android:src="@drawable/button_up" />
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_handlecontent_bg"
+            android:clickable="true" >
+
+            <GridView
+		        android:id="@+id/gv_clipboardContent"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:columnWidth="90dp"
+		        android:gravity="center"
+		        android:horizontalSpacing="10dp"
+		        android:numColumns="auto_fit"
+		        android:stretchMode="columnWidth"
+		        android:verticalSpacing="10dp" >
+		    </GridView>
+        </LinearLayout>
+    </SlidingDrawer> -->
+</RelativeLayout>

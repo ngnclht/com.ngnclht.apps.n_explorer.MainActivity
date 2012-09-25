@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/amain_ribbonToolbarButton_margin"
+    android:background="@drawable/selector_filefolder_bg"
+    android:gravity="center_vertical"
+    >
+
+    <ImageView
+        android:id="@+id/ff_img"
+        android:scaleType="fitXY"
+        android:layout_width="@dimen/grid_list_small"
+        android:layout_height="@dimen/grid_list_small"
+		android:layout_gravity="top"        
+        android:src="@drawable/folder_icon_default" 
+        android:layout_marginLeft="5dp"/>
+    <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical">
+    <TextView
+	        android:id="@+id/ff_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/amain_button_function_favourite"
+	        android:lines="1"
+	        android:textColor="@color/White"
+	        android:textSize="@dimen/grid_list_small_textsize" />
+    <TextView
+	        android:id="@+id/ff_detail"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/amain_button_function_favourite"
+	        android:lines="1"
+	        android:textColor="@color/Cyan"
+	        android:textSize="@dimen/grid_list_small_textsize_small" />
+    </LinearLayout>
+</LinearLayout>

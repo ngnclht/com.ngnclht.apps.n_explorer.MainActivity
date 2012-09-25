@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/Black" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:shrinkColumns="*"
+        android:stretchColumns="*" >
+
+        <!-- begin  group display setting -->
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/DarkGray"
+            android:text="@string/asetting_group_display"
+            android:textColor="@color/BlueGreenBold"
+            android:textStyle="bold" />
+
+        <TableRow
+            android:id="@+id/asetting_theme"
+            android:background="@drawable/selector_setting_bg"
+            android:clickable="true" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@string/asetting_theme"
+                    android:textColor="@color/White"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@string/asetting_theme_des"
+                    android:textColor="@color/BlueGreen"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/DimGray" />
+
+        <TableRow
+            android:id="@+id/asetting_layout"
+            android:background="@drawable/selector_setting_bg"
+            android:clickable="true" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@string/asetting_layout"
+                    android:textColor="@color/White"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@string/asetting_layout_des"
+                    android:textColor="@color/BlueGreen"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/DimGray" />
+
+        <TableRow
+            android:id="@+id/asetting_file"
+            android:background="@drawable/selector_setting_bg"
+            android:clickable="true" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@string/asetting_file"
+                    android:textColor="@color/White"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@string/asetting_file_des"
+                    android:textColor="@color/BlueGreen"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </TableRow>
+        <!-- end group  display setting -->
+        <!-- begin  group view setting -->
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/DarkGray"
+            android:text="@string/asetting_group_view"
+            android:textColor="@color/BlueGreenBold"
+            android:textStyle="bold" />
+
+        <TableRow
+            android:id="@+id/asetting_view"
+            android:background="@drawable/selector_setting_bg"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_view"
+                        android:textColor="@color/White"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_view_des"
+                        android:textColor="@color/BlueGreen"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/arrow_right" />
+            </FrameLayout>
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/DimGray" />
+        <TableRow
+            android:id="@+id/asetting_iconsize"
+            android:background="@drawable/selector_setting_bg"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_iconsize"
+                        android:textColor="@color/White"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_iconsize_des"
+                        android:textColor="@color/BlueGreen"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/arrow_right" />
+            </FrameLayout>
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/DimGray" />
+        <TableRow
+            android:id="@+id/asetting_sorting"
+            android:background="@drawable/selector_setting_bg"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_sorting"
+                        android:textColor="@color/White"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_sorting_des"
+                        android:textColor="@color/BlueGreen"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/arrow_right" />
+            </FrameLayout>
+        </TableRow>
+		<!-- end group view settings -->
+        <!-- begin  group path setting -->
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/DarkGray"
+            android:text="@string/asetting_group_path"
+            android:textColor="@color/BlueGreenBold"
+            android:textStyle="bold" />
+
+        <TableRow
+            android:id="@+id/asetting_homedir"
+            android:background="@drawable/selector_setting_bg"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_homedir"
+                        android:textColor="@color/White"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_homedir_des"
+                        android:textColor="@color/BlueGreen"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/arrow_right" />
+            </FrameLayout>
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/DimGray" />
+        <TableRow
+            android:id="@+id/asetting_uptoroot"
+            android:background="@drawable/selector_setting_bg"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_uptoroot"
+                        android:textColor="@color/White"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_iconsize_des"
+                        android:textColor="@color/BlueGreen"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:clickable="false"
+                    />
+            </FrameLayout>
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/DimGray" />
+        <TableRow
+            android:id="@+id/asetting_appsbackup"
+            android:background="@drawable/selector_setting_bg"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_appsbackupdir"
+                        android:textColor="@color/White"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_appsbackupdir_des"
+                        android:textColor="@color/BlueGreen"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/arrow_right" />
+            </FrameLayout>
+        </TableRow>
+		<!-- end group path settings -->
+        <!-- begin  group other setting -->
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/DarkGray"
+            android:text="@string/asetting_group_other"
+            android:textColor="@color/BlueGreenBold"
+            android:textStyle="bold" />
+
+        <TableRow
+            android:id="@+id/asetting_security"
+            android:background="@drawable/selector_setting_bg"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_security"
+                        android:textColor="@color/White"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_security_des"
+                        android:textColor="@color/BlueGreen"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </FrameLayout>
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/DimGray" />
+        <TableRow
+            android:id="@+id/asetting_hidelist"
+            android:background="@drawable/selector_setting_bg"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_hidelist"
+                        android:textColor="@color/White"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_hidelist_des"
+                        android:textColor="@color/BlueGreen"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                
+            </FrameLayout>
+        </TableRow>
+		<!-- end group other settings -->
+        <!-- begin  group root setting -->
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/DarkGray"
+            android:text="@string/asetting_group_root"
+            android:textColor="@color/BlueGreenBold"
+            android:textStyle="bold" />
+
+        <TableRow
+            android:id="@+id/asetting_rootexplorer"
+            android:background="@drawable/selector_setting_bg"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_rootexplorer"
+                        android:textColor="@color/White"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_rootexplorer_des"
+                        android:textColor="@color/BlueGreen"
+                        android:textSize="16sp" />
+                </LinearLayout>
+                <CheckBox 
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="right"
+                    android:clickable="false"
+                    />
+            </FrameLayout>
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/DimGray" />
+        <TableRow
+            android:id="@+id/asetting_autobackupapp"
+            android:background="@drawable/selector_setting_bg"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_autobackupapp"
+                        android:textColor="@color/White"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_autobackupapp_des"
+                        android:textColor="@color/BlueGreen"
+                        android:textSize="16sp" />
+                </LinearLayout>
+                <CheckBox 
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="right"
+                    android:clickable="false"
+                    />
+                
+            </FrameLayout>
+        </TableRow>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/DimGray" />
+        <TableRow
+            android:id="@+id/asetting_mountfilesystem"
+            android:background="@drawable/selector_setting_bg"
+            android:clickable="true"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_mountfilesystem"
+                        android:textColor="@color/White"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/asetting_mountfilesystem_des"
+                        android:textColor="@color/BlueGreen"
+                        android:textSize="16sp" />
+                </LinearLayout>
+                <CheckBox 
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="right"
+                    android:clickable="false"
+                    />
+                
+            </FrameLayout>
+        </TableRow>
+		<!-- end group other settings -->
+        
+    </TableLayout>
+
+</ScrollView>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_gray_ribbon_bg"
+        android:gravity="center" >
+
+        <LinearLayout
+            android:id="@+id/asettingsecurity_dialog_changepass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:padding="1dp"
+            android:orientation="vertical"
+            android:gravity="center" 
+            >
+
+			
+			<RelativeLayout
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content" >
+
+			    <TextView
+			        android:id="@+id/asettingsecurity_dialog_changepass_oldpass_txt" 
+			        android:text="@string/asettingsecurity_dialog_changepass_oldpass"
+			        android:layout_height="wrap_content"
+			        android:layout_width="wrap_content"
+			        android:layout_gravity="left"
+			        android:textColor="@color/Black"
+			        android:textSize="18sp"
+			        android:layout_alignParentLeft="true"
+			        android:minWidth="150dp"
+			        android:layout_marginRight="2dp"
+			        android:layout_alignBaseline="@+id/asettingsecurity_dialog_changepass_oldpass"
+			        android:gravity="right"
+			        />
+			    <EditText 
+			        android:id="@+id/asettingsecurity_dialog_changepass_oldpass"
+			        android:layout_height="wrap_content"
+			        android:layout_width="wrap_content"
+			        android:inputType="textPassword"
+			        android:layout_toRightOf="@+id/asettingsecurity_dialog_changepass_oldpass_txt"
+			        android:layout_alignParentRight="true"
+			        />
+			</RelativeLayout>
+			<RelativeLayout
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content" >
+
+			    <TextView
+			        android:id="@+id/asettingsecurity_dialog_changepass_newpass_txt" 
+			        android:text="@string/asettingsecurity_dialog_changepass_newpass"
+			        android:layout_height="wrap_content"
+			        android:layout_width="wrap_content"
+			        android:layout_gravity="left"
+			        android:textColor="@color/Black"
+			        android:textSize="18sp"
+			        android:layout_alignParentLeft="true"
+			        android:minWidth="150dp"
+			        android:layout_marginRight="2dp"
+			        android:layout_alignBaseline="@+id/asettingsecurity_dialog_changepass_newpass"
+			        android:gravity="right"
+			        />
+			    <EditText 
+			        android:id="@+id/asettingsecurity_dialog_changepass_newpass"
+			        android:layout_height="wrap_content"
+			        android:layout_width="wrap_content"
+			        android:inputType="textPassword"
+			        android:layout_toRightOf="@+id/asettingsecurity_dialog_changepass_newpass_txt"
+			        android:layout_alignParentRight="true"
+			        />
+			</RelativeLayout>
+			<RelativeLayout
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content" >
+
+			    <TextView
+			        android:id="@+id/asettingsecurity_dialog_changepass_retypepass_txt" 
+			        android:text="@string/asettingsecurity_dialog_changepass_retypepass"
+			        android:layout_height="wrap_content"
+			        android:layout_width="wrap_content"
+			        android:layout_gravity="left"
+			        android:textColor="@color/Black"
+			        android:textSize="18sp"
+			        android:layout_alignParentLeft="true"
+			        android:minWidth="150dp"
+			        android:layout_marginRight="2dp"
+			        android:layout_alignBaseline="@+id/asettingsecurity_dialog_changepass_retypepass"
+			        android:gravity="right"
+			        />
+			    <EditText 
+			        android:id="@+id/asettingsecurity_dialog_changepass_retypepass"
+			        android:layout_height="wrap_content"
+			        android:layout_width="wrap_content"
+			        android:inputType="textPassword"
+			        android:layout_toRightOf="@+id/asettingsecurity_dialog_changepass_retypepass_txt"
+			        android:layout_alignParentRight="true"
+			        />
+			</RelativeLayout>
+			
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/asettingsecurity_dialog_changepass"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/asettingsecurity_dialog_changepass_okbutton"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Ok_button" />
+
+            <Button
+                android:id="@+id/asettingsecurity_dialog_changepass_cancelbutton"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Cancel_button" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

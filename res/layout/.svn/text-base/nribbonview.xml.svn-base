@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/amain_rl_ribbon"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent_amain_ribbon_bg" >
+
+    <RelativeLayout
+        android:id="@+id/amain_rl_ripbonTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/amain_ribbon_title_width"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/amain_tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="@dimen/amain_ribbon_title_margin"
+            android:layout_toLeftOf="@+id/amain_bt_ribbonHome"
+            android:background="@drawable/selector_ribbon_title_bg"
+            android:gravity="center_vertical"
+            android:text="@string/hello_world"
+            android:textColor="@color/address_textcolor"
+            android:textSize="@dimen/amain_ribbon_title_textsize" />
+
+        <Button
+            android:id="@+id/amain_bt_ribbonHome"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/amain_ribbon_title_margin"
+            android:layout_toLeftOf="@+id/amain_bt_ribbonEdit"
+            android:background="@drawable/selector_ribbon_title_bg"
+            android:minWidth="@dimen/amain_ribbon_title_minwidth"
+            android:padding="@dimen/amain_ribbon_title_padding"
+            android:text="@string/amain_button_ribbon_homeContext"
+            android:textSize="@dimen/amain_ribbon_title_textsize" />
+
+        <Button
+            android:id="@+id/amain_bt_ribbonEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/amain_ribbon_title_margin"
+            android:layout_toLeftOf="@+id/amain_bt_ribbonTools"
+            android:background="@drawable/selector_ribbon_title_bg"
+            android:minWidth="@dimen/amain_ribbon_title_minwidth"
+            android:padding="@dimen/amain_ribbon_title_padding"
+            android:text="@string/amain_button_ribbon_editContext"
+            android:textSize="@dimen/amain_ribbon_title_textsize" />
+
+        <Button
+            android:id="@+id/amain_bt_ribbonTools"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/amain_bt_ribbonHandle"
+            android:layout_margin="@dimen/amain_ribbon_title_margin"
+            android:background="@drawable/selector_ribbon_title_bg"
+            android:minWidth="@dimen/amain_ribbon_title_minwidth"
+            android:padding="@dimen/amain_ribbon_title_padding"
+            android:text="@string/amain_button_ribbon_toolsContext"
+            android:textSize="@dimen/amain_ribbon_title_textsize" />
+        <ImageButton
+            android:id="@+id/amain_bt_ribbonHandle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/amain_ribbon_title_margin"
+            android:src="@drawable/arrow_up"
+            android:background="@drawable/selector_ribbon_title_bg"
+            android:padding="@dimen/amain_ribbon_title_padding"
+           />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/amain_rl_ribbonToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/amain_rl_ripbonTitle"
+        android:gravity="center" >
+		
+        
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,44 @@
+<resources>
+
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="zero">0dp</dimen>
+    
+    <dimen name="amain_ribbon_title_minwidth">50dp</dimen>
+    <dimen name="amain_ribbon_title_textsize">12sp</dimen>
+    <dimen name="amain_ribbon_title_width">33dp</dimen>
+    <dimen name="amain_ribbon_title_margin">1dp</dimen>
+    <dimen name="amain_ribbon_title_padding">1dp</dimen>
+        
+    <dimen name="amain_ribbonToolbar_textsize">10sp</dimen>
+    <dimen name="amain_ribbonToolbar_heigth">63dp</dimen>
+    <dimen name="amain_ribbonToolbarButton_width">55dp</dimen>
+    <dimen name="amain_ribbonToolbarButton_height">50dp</dimen>
+    <dimen name="amain_ribbonToolbarButton_margin">0.1dp</dimen>
+
+	<dimen name="amain_small_ff_margin">1dp</dimen>
+	<dimen name="amain_small_ff_width">50dp</dimen>
+	<dimen name="amain_small_ff_height">50dp</dimen>
+	<dimen name="amain_small_ff_textsize">12sp</dimen>
+	
+	<dimen name="amain_handdle_button_width">55dp</dimen>
+	<dimen name="amain_handdle_button_heigth">35dp</dimen>
+	
+	<dimen name="grid_list_small_textsize">11sp</dimen>
+	<dimen name="grid_list_small_textsize_small">9sp</dimen>
+	<dimen name="grid_list_normal_textsize">13sp</dimen>
+	<dimen name="grid_list_normal_textsize_small">10sp</dimen>
+	<dimen name="grid_list_large_textsize">15sp</dimen>
+	<dimen name="grid_list_large_textsize_small">11sp</dimen>
+	<dimen name="grid_list_elarge_textsize">17sp</dimen>
+	<dimen name="grid_list_elarge_textsize_small">12sp</dimen>
+	
+	<dimen name="grid_list_small">30dp</dimen>
+	<dimen name="grid_list_normal">50dp</dimen>
+	<dimen name="grid_list_large">70dp</dimen>
+	<dimen name="grid_list_elarge">90dp</dimen>
+	
+	<dimen name="grid_horizontalSpacing">10dp</dimen>
+	<dimen name="grid_verticalSpacing">10dp</dimen>
+</resources>

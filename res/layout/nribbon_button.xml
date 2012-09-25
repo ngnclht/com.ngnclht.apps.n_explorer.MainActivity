@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/amain_ribbonToolbarButton_width"
+    android:layout_height="@dimen/amain_ribbonToolbarButton_height"
+    android:layout_margin="@dimen/amain_ribbonToolbarButton_margin"
+    android:background="@drawable/selector_ribbon_button_bg"
+    android:clickable="true"
+    android:focusable="true" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:src="@drawable/function_favourite" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:text="@string/amain_button_function_favourite"
+        android:textColor="@color/Black"
+        android:lines="1"
+        android:textSize="@dimen/amain_ribbonToolbar_textsize" />
+
+</RelativeLayout>

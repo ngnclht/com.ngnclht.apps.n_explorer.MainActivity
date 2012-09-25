@@ -1,0 +1,261 @@
+<resources>
+
+    <string name="app_name">N-Explorer</string>
+    <string name="hello_world">Xin chào</string>
+    <string name="title_activity_main">N-Explorer</string>
+    <string name="Ok_button">OK</string>
+    <string name="skip_button">Bỏ qua</string>
+    <string name="Cancel_button">Hủy</string>
+	<!-- amain menu -->
+	<string name="amain_menu_add">Thêm</string>
+    <string name="amain_menu_settings">Cài đặt</string>
+    <string name="amain_menu_help">Giúp đỡ</string>
+    <string name="amain_menu_about">Thông tin</string>
+    <string name="amain_menu_exit">Thoát</string>
+    	
+    <!-- amain ribbon title-->
+    <string name="amain_button_ribbon_homeContext">Home</string>
+    <string name="amain_button_ribbon_editContext">Sửa</string>
+    <string name="amain_button_ribbon_toolsContext">Công cụ</string>
+    <!-- amain ribbon toolbar-->
+    <string name="amain_button_function_add">Thêm</string>
+    <string name="amain_button_function_search">Tìm kiếm</string>
+    <string name="amain_button_function_favourite">Ưa thích</string>
+    <string name="amain_button_function_multiselect">Chọn nhiều</string>
+    <string name="amain_button_function_folderup">Lên trên</string>
+    <string name="amain_button_function_view">Danh sách</string>
+    <string name="amain_button_function_viewList">Danh sách</string>
+    <string name="amain_button_function_viewMatrix">Ma trận</string>
+	<string name="amain_button_function_info">Thông tin</string>
+    <string name="amain_button_function_menu">Tùy chọn</string>	
+    <string name="amain_button_function_appman">Q.l Ứng dụng</string>	
+    <string name="amain_button_function_backup">Sao lưu</string>	
+    <string name="amain_button_function_edit">Sửa</string>	
+    <string name="amain_button_function_extract">Giải nén</string>	
+    <string name="amain_button_function_help">Giúp đỡ</string>	
+    <string name="amain_button_function_home">Home</string>	
+    <string name="amain_button_function_refresh">Làm mới</string>	
+    <string name="amain_button_function_save">Lưu</string>	
+    <string name="amain_button_function_setting">Cài đặt</string>	
+    <string name="amain_button_function_zip">Nén file</string>	
+    <string name="amain_button_function_delete">Xóa</string>
+    <string name="amain_button_function_copy">Sao</string>
+    <string name="amain_button_function_paste">Dán</string>
+    <string name="amain_button_function_cut">Cắt</string>
+    <string name="amain_button_function_rename">Đổi tên</string>
+    <string name="amain_button_function_cancel">Hủy</string>
+    
+    <string name="amain_button_function_send">Gửi</string>
+    
+    <!-- asetting -->
+    <!-- group display setting -->
+    <string name="asetting_group_display">Cài đặt hiển thị</string>
+    
+    <string name="asetting_layout">Cài đặt khung</string>
+    <string name="asetting_layout_des">Sửa các thành phần giao diện</string>
+    <string name="asetting_theme">Cài đặt chủ đề</string>
+    <string name="asetting_theme_des">Chủ đề và màu sắc</string>
+    <string name="asetting_file">Tùy chọn file</string>
+    <string name="asetting_file_des">Các tùy chọn về file</string>
+    <!-- group view setting -->
+    <string name="asetting_group_view">Cài đặt mà hình</string>
+    
+    <string name="asetting_view">Kiểu cách</string>
+    <string name="asetting_view_des">Danh sách hay biểu tượng</string>
+    <string name="asetting_iconsize">Kích thước biểu tượng</string>
+    <string name="asetting_iconsize_des">Nhỏ, Bình thường, Lớn</string>
+    <string name="asetting_sorting">Sắp xếp</string>
+    <string name="asetting_sorting_des">Tùy chọn về sắp xếp file</string>
+    <!-- group path setting -->
+    <string name="asetting_group_path">Cài đặt đường dẫn</string>
+    
+    <string name="asetting_homedir">Đường dẫn mặc định</string>
+    <string name="asetting_homedir_des">Cài đặt đường dẫn mặc định</string>
+    <string name="asetting_uptoroot">Truy cập thư mục (/)</string>
+    <string name="asetting_uptoroot_des">Mở khả năng truy cập root</string>
+    <string name="asetting_appsbackupdir">Đường dẫn backup</string>
+    <string name="asetting_appsbackupdir_des">Cài đường dẫn backup</string>
+    <!-- group other setting -->
+    <string name="asetting_group_other">Cài đặt khác</string>
+    
+    <string name="asetting_security">Cài đặt bảo mật</string>
+    <string name="asetting_security_des">Các tùy chọn về bảo mật</string>
+    <string name="asetting_hidelist">Danh sách file ẩn</string>
+    <string name="asetting_hidelist_des">Quản lý danh sách file ẩn</string>
+    
+    
+    <!-- group root settings -->
+    <string name="asetting_group_root">Cài đặt quyền root</string>
+    
+    <string name="asetting_rootexplorer">Dùng như một Root Explorer</string>
+    <string name="asetting_rootexplorer_des">Chỉ những máy đã root</string>
+    <string name="asetting_mountfilesystem">Quản lý thư mục system</string>
+    <string name="asetting_mountfilesystem_des">Quản lý thư mục / có thể ghi</string>
+    <string name="asetting_autobackupapp">Sao lưu</string>
+    <string name="asetting_autobackupapp_des">Tự động sao lưu ứng dụng</string>
+    <!-- amain setting-dialog -->
+    <string name="asetting_dialog_homedir_title">Đường dẫn mặc định</string>
+    <string name="asetting_dialog_appsbkdir_title">Đường dẫn sao lưu apps</string>
+    
+    
+    <string name="asetting_dialog_typeyourdir_hint">Nhập vào đây</string>
+    <string name="asetting_dialog_direrrors_errors">Không phải là thư mục, vui lòng nhập thư mục đúng</string>
+    <string name="asetting_dialog_direrrors_empty">Đường dẫn không hợp lệ</string>
+    
+    <string name="asetting_dialog_sorting_title">Sắp xếp bằng</string>
+    <string name="asetting_dialog_sorting_byname">Tên</string>
+    <string name="asetting_dialog_sorting_bysize">Kích thước</string>
+    <string name="asetting_dialog_sorting_bydate">Ngày tạo</string>
+    <string name="asetting_dialog_sorting_byextension">Phần mở rộng</string>
+    
+    <string name="asetting_dialog_iconsize_title">Kích thước biểu tượng</string>
+    <string name="asetting_dialog_iconsize_elarge">Cực lớn</string>
+    <string name="asetting_dialog_iconsize_large">Lớn</string>
+    <string name="asetting_dialog_iconsize_normal">Bình thường</string>
+    <string name="asetting_dialog_iconsize_small">Nhỏ</string>
+    
+    <string name="asetting_dialog_view_title">Hiển thị</string>
+    <string name="asetting_dialog_view_matrix">Biểu tượng</string>
+    <string name="asetting_dialog_view_list">Danh sách</string>
+    <string name="asetting_dialog_view_listdetail">Danh sách chi tiết</string>
+    
+    <!-- amain setting themes -->
+    <string name="asettingtheme_themes">Cài đặt chủ đề</string>
+    <string name="asettingtheme_themes_des">Chọn chủ đề</string>
+    <string name="asettingtheme_themes_simplecolor">Đơn sắc</string>
+    <string name="asettingtheme_themes_simplecolor_des">Chỉ trong chủ đề đơn sắc</string>
+    <string name="asettingtheme_themes_custombackground">Hình nền riêng</string>
+    <string name="asettingtheme_themes_custombackground_des">Chỉ trong chế độ hình nền</string>
+    <string name="asettingtheme_themes_folderstyle">Kiểu dáng thư mục</string>
+    <string name="asettingtheme_themes_folderstyle_des">Chọn kiểu dáng thư mục</string>
+    
+    <string name="asettingtheme_dialog_theme_title">Chọn chủ đề</string>
+    <string name="asettingtheme_dialog_theme_simple">Đơn sắc</string>
+    <string name="asettingtheme_dialog_theme_custom">Hình nền riêng</string>
+    
+    <string name="asettingtheme_dialog_folderstyle_title">Kiểu dáng thư mục</string>
+    <string name="asettingtheme_dialog_folderstyle_style1">Kiểu 1</string>
+    <string name="asettingtheme_dialog_folderstyle_style2">Kiểu 2</string>
+    <string name="asettingtheme_dialog_folderstyle_style3">Kiểu 3</string>
+    <string name="asettingtheme_dialog_folderstyle_style4">Kiểu 4</string>
+    
+    <!-- amain setting layout -->
+    <string name="asettinglayout_ribbontitle">Nhãn Ribbon</string>
+    <string name="asettinglayout_ribbontitle_des">Ẩn hiện nhãn Ribbon</string>
+    <string name="asettinglayout_ribbonbutton">Thanh ribbon</string>
+    <string name="asettinglayout_ribbonbutton_des">Tự động ẩn thanh ribbon</string>
+    <string name="asettinglayout_clipboard">Clipboard Sliding</string>
+    <string name="asettinglayout_clipboard_des">Show or hide Clipboard Sliding</string>
+    <string name="asettinglayout_maxhistory">Số lượng lưu lịch sử</string>
+    <string name="asettinglayout_maxhistory_des">Số lượng lưu lịch sử</string>
+    <string name="asettinglayout_language">Ngôn ngữ</string>
+    <string name="asettinglayout_language_des">Chọn ngôn ngữ</string>
+    
+    <string name="asettinglayout_dialog_maxhistory_title">Số lượng lưu lịch sử</string>
+    <string name="asettinglayout_dialog_maxhistory_msg">Vui lòng nhập</string>
+    <string name="asettinglayout_dialog_lang_title">Chọn ngôn ngữ</string>
+    
+    <string name="asettinglayout_dialog_lang_auto">Tự động</string>
+    <string name="asettinglayout_dialog_lang_en">Tiếng Anh</string>
+    <string name="asettinglayout_dialog_lang_vi">Tiếng Việt</string>
+    
+     <!-- amain setting file -->
+    <string name="asettingfile_hidden">File ẩn</string>
+    <string name="asettingfile_hidden_des">Ẩn hoặc hiện file ẩn</string>
+    <string name="asettingfile_imgthumbnall">Hình thu nhỏ</string>
+    <string name="asettingfile_imgthumbnall_des">Hiển thị hình thu nhỏ</string>
+    
+     <!-- amain setting security -->
+    <string name="asettingsecurity_startprotect">Bảo vệ bằng mật khẩu</string>
+    <string name="asettingsecurity_startprotect_des">Cần nhập mật khẩu</string>
+    <string name="asettingsecurity_changepass">Mật khẩu</string>
+    <string name="asettingsecurity_changepass_des">Thay đổi mật khẩu (Mặc định 123456)</string>
+    
+    <string name="asettingsecurity_dialog_changepass_title">Thay đổi mật khẩu</string>
+    <string name="asettingsecurity_dialog_enterpass_title">Nhập mật khẩu</string>
+    <string name="asettingsecurity_dialog_changepass_oldpass">Mật khẩu cũ</string>
+    <string name="asettingsecurity_dialog_changepass_newpass">Mật khẩu mới</string>
+    <string name="asettingsecurity_dialog_changepass_retypepass">Nhập lại</string>
+    
+    <string name="asettingsecurity_dialog_changepass_msg_empty">Vui lòng điền đầy đủ thông tin</string>
+    <string name="asettingsecurity_dialog_changepass_msg_length">Mật khẩu phải lớn hơn 6 ký tự</string>
+    <string name="asettingsecurity_dialog_changepass_msg_incorrect">Sai mật khẩu</string>
+    <string name="asettingsecurity_dialog_changepass_msg_difference">Hai mật khẩu không trùng nhau</string>
+    <string name="asettingsecurity_dialog_changepass_msg_success">Mật khẩu đổi thành công</string>
+    
+    <!-- String on code -->
+    <string name="amain_code_toast_permission">Không thể truy cập do quyền truy cập. Vui lòng bật chức năng RootMode</string>
+    <string name="amain_code_toast_noapp_avaible">Không có ứng dụng tương thích</string>
+    <string name="amain_code_toast_multiselect_active">Chế độ chọn nhiều sẵn sàng</string>
+    <string name="amain_code_toast_multiselect_inactive">Chế độ chọn nhiều bị hủy</string>
+    <string name="amain_code_toast_againtoexit">Bấm lần nữa để thoát</string>
+    
+    <string name="amain_code_cmenu_headertitle">Tùy chọn</string>
+    <string name="amain_code_cmenu_copy">Sao chép</string>
+    <string name="amain_code_cmenu_cut">Cắt</string>
+    <string name="amain_code_cmenu_delete">Xóa</string>
+    <string name="amain_code_cmenu_hide">Ẩn</string>
+    <string name="amain_code_cmenu_open">Mở</string>
+    <string name="amain_code_cmenu_paste">Dán</string>
+    <string name="amain_code_cmenu_properties">Thông tin</string>
+    <string name="amain_code_cmenu_selectall">Chọn tất cả</string>
+    <string name="amain_code_cmenu_selectinvert">Chọn đảo ngược</string>
+    <string name="amain_code_cmenu_setfavour">Thêm vào ưa thích</string>
+    <string name="amain_code_cmenu_sethome">Đặt là thư mục gốc</string>
+    <string name="amain_code_cmenu_shortcut">Tạo lối tắt</string>
+    
+    <string name="amain_code_cmenu_delete_dialog_title">Chấp nhận xóa</string>
+    <string name="amain_code_cmenu_delete_dialog_success">Đã xóa</string>
+    <string name="amain_code_cmenu_sethomesuccess">Đặt thư mục gốc thành công</string>
+    <string name="amain_code_cmenu_setfavoursuccess">Thêm vào ưa thích</string>
+    <string name="amain_code_cmenu_setfavourfailed">Đã tồn tại trong danh sách</string>
+    <string name="amain_code_cmenu_sethidesuccess">Ẩn thành công</string>
+    <string name="amain_code_cmenu_sethidefailed">Đã tồn tại trong danh sách</string>
+    
+    <string name="amain_code_cmenu_createshortcutfailed">Không thể tạo lối tắt</string>
+    
+    <string name="pr_dialog_calculating">Đang tính toán &#8230;</string>
+    <string name="pr_dialog_copying">Đang sao chép &#8230;</string>
+    <string name="pr_dialog_message_wait">Vui lòng đợi!</string>
+    <string name="pr_dialog_moving">Đang chuyển &#8230;</string>
+    <string name="pr_dialog_deleting">Đang xóa &#8230;</string>
+    <string name="pr_dialog_searching">Đang tìm kiếm &#8230;</string>
+    <string name="pr_dialog_searching_errors">Không tìm thấy</string>
+    <string name="pr_dialog_ziping">Ziping &#8230;</string>
+    <string name="pr_dialog_unziping">UnZiping &#8230;</string>
+    <string name="pr_dialog_error">Có lỗi không xác định</string>
+    
+    <string name="dialog_dinfor_size">Kích thước</string>
+    <string name="dialog_dinfor_contain">Bao gồm</string>
+    <string name="dialog_dinfor_modified">Ngày tạo</string>
+    <string name="dialog_dinfor_path">Đường dẫn</string>
+    <string name="dialog_dinfor_type">Loại</string>
+    <string name="dialog_dinfor_readable">Có thể đọc</string>
+    <string name="dialog_dinfor_writeable">Có thể ghi</string>
+    <string name="yes">có</string>
+    <string name="no">không</string>
+    <string name="gb">Gb</string>
+    <string name="mb">Mb</string>
+    <string name="kb">Kb</string>
+    
+    <string name="_file">Tệp tin</string>
+    <string name="_folder">Thư mục</string>
+    <string name="_files">Tệp tin</string>
+    <string name="_folders">Thư mục</string>
+    
+    <string name="_login">Vui lòng nhập mật khẩu</string>
+    
+    <string name="paste_fileexist_title">Có một số file bị trùng, có ghi đè hay không?</string>
+    <string name="paste_fileexist">File bị trùng, ghi đè?</string>
+    <string name="paste_invalidpath">Đường dẫn sai</string>
+    <string name="paste_skipexist">Một số file đã bỏ qua</string>
+    <string name="menu_new_select">Tạo mới</string>
+    <string name="menu_new_enterpath">Nhập tên</string>
+    <string name="menu_new_success">Thành công </string>
+    <string name="menu_new_error">Không thể tạo </string>
+    <string name="ribbon_button_cannot_up">Đây là thư mục cao nhất, không thể đi lên</string>
+    
+    <string name="menu_about_title">Thông tin N-Explorer 0.9 - beta</string>
+    <string name="menu_about_infor">Nguyễn Giang Nam -TTTH Hoàng Nguyễn \nVinanewstar.vn@gmail.com  +84985050907  \nHà Tĩnh - Việt Nam</string>
+    
+</resources>

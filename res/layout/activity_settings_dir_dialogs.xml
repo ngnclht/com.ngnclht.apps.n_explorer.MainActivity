@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gradient_gray_ribbon_bg" >
+
+    <EditText
+        android:id="@+id/asetting_dialog_homedir_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/asetting_dialog_typeyourdir_hint"
+        android:maxLines="1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" 
+        android:layout_below="@+id/asetting_dialog_homedir_content">
+
+        <Button
+            android:id="@+id/asetting_dialog_homedir_okbutton"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Ok_button" />
+
+        <Button
+            android:id="@+id/asetting_dialog_homedir_cancelbutton"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/asetting_dialog_homedir_okbutton"
+            android:layout_toRightOf="@+id/asetting_dialog_homedir_okbutton"
+            android:text="@string/Cancel_button" />
+    </RelativeLayout>
+
+</RelativeLayout>
