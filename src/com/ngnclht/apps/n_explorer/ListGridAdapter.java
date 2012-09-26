@@ -72,6 +72,8 @@ public class ListGridAdapter extends BaseAdapter{
 		
 		v.setText(data.get(position));
 		v.setImage();
+		if(thumbnailCreator == null) 
+			thumbnailCreator = new ThumbnailCreator(54, 54);
 		//  check weather item is image
 		String item_ext = f.getPath().substring(f.getPath().lastIndexOf(".")+1);
 		if (item_ext.equalsIgnoreCase("png") ||
@@ -81,7 +83,6 @@ public class ListGridAdapter extends BaseAdapter{
 				item_ext.equalsIgnoreCase("tiff")) {
 			
 				if(settings.getBoolean(SettingsActivity.KEY_SETTINGFILE_IMGTHUMB, true)){
-					thumbnailCreator = new ThumbnailCreator(54, 54);
 					
 					Bitmap thumb = thumbnailCreator.isBitmapCached(f.getPath());
 		
@@ -103,6 +104,8 @@ public class ListGridAdapter extends BaseAdapter{
 					}
 			}
 		}
+			
+		
 		if(nContentView.isMultiselect() &&nContentView.getSelectList()!=null&& nContentView.getSelectList().indexOf(nf.getCurrentDir()+"/"+data.get(position)) != -1){
 			v.setItemSelected();
 			nSelected.add(v);

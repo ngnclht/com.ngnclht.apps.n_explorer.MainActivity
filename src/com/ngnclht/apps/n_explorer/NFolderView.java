@@ -37,7 +37,7 @@ public class NFolderView extends LinearLayout{
 		res 	 = getResources();
 		modelFileIcon 		= mficon;
 		modelFolderStyle	= mfstyle;
-		Log.e("NFolderView", "" + String.valueOf("create view of === "+f.getName()));
+		Log.v("NFolderView", "" + String.valueOf("create view of === "+f.getName()));
 		// TODO inflate layout
 		LayoutInflater la = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		// if view icons

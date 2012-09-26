@@ -105,7 +105,7 @@ public class DBAdapter{
 	private SQLiteDatabase db;
 
 	public DBAdapter(Context ctx) {
-		Log.e("DBAdapter", "" + String.valueOf("running"));
+		Log.v("DBAdapter", "" + String.valueOf("running"));
 		this.context = ctx;
 		this.DBHelper = new DatabaseHelper(this.context);
 	}
@@ -122,7 +122,7 @@ public class DBAdapter{
 			db.execSQL(CREAT_TABLE_FOLDERSTYLE);
 			db.execSQL(CREAT_TABLE_HIDE);
 			db.execSQL(CREAT_TABLE_FAVOUR);
-			Log.e("onCreate", "" + String.valueOf("running"));
+			Log.v("onCreate", "" + String.valueOf("creating database table"));
 		}
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

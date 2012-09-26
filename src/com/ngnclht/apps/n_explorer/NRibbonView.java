@@ -70,7 +70,7 @@ public class NRibbonView extends RelativeLayout {
 				R.dimen.amain_ribbonToolbarButton_width);
 		ribbonToolbar_maxButton = (int) metrics.widthPixels / widthPx;
 
-		Log.e("NRibbonView",
+		Log.v("NRibbonView",
 				"Max button: " + String.valueOf(ribbonToolbar_maxButton));
 
 		settings = context.getSharedPreferences("SettingsActivity",
@@ -207,7 +207,6 @@ public class NRibbonView extends RelativeLayout {
 						((LinearLayout) v.getParent()).setVisibility(View.GONE);
 					
 					if (b.getText() == (String) getResources().getText(R.string.amain_button_function_home)) {
-						Log.e("onClick", "" + String.valueOf(b.getText()));
 						nFileMan.gotoHome();
 						nContentView.updateView();
 						return;

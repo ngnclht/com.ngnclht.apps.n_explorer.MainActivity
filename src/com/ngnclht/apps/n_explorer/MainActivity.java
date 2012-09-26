@@ -70,7 +70,6 @@ public class MainActivity extends Activity {
 		}
     	settings = getSharedPreferences("SettingsActivity", MODE_WORLD_WRITEABLE);
         editor 	 = settings.edit();
-        nfilemanager = new NFileManager(this);
         initLoadConfig();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -109,8 +108,8 @@ public class MainActivity extends Activity {
     	}
     	amain_ncontent 						= (NContentView) findViewById(R.id.amain_ncontent);
     	amain_nribbon 						= (NRibbonView) findViewById(R.id.amain_nribbon);
+    	nfilemanager = new NFileManager(this,amain_ncontent);
     	amain_nribbon.prepare(nfilemanager,amain_ncontent);
-    	
     	ModelFileIcon modelFileIcon 		= new ModelFileIcon(new DBAdapter(this));
 		ModelFolderStyle modelFolderStyle 	= new ModelFolderStyle(new DBAdapter(this));
     	amain_ncontent.initViewData(nfilemanager,modelFileIcon,modelFolderStyle,amain_nribbon);
@@ -161,7 +160,7 @@ public class MainActivity extends Activity {
 						// TODO Auto-generated method stub
 						try {
 							String enterPass = NStringEncription.MD5(content.getText().toString());
-							if(enterPass.equals(settings.getString(SettingsActivity.KEY_SETTINGSECU_PASSWORD, "randomrandom"))){
+							if(enterPass.equals(settings.getString(SettingsActivity.KEY_SETTINGSECU_PASSWORD, ""))){
 								dialog.dismiss();
 								isLogin = true;
 							}else{

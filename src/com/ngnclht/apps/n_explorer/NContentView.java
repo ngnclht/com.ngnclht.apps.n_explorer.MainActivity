@@ -373,38 +373,7 @@ public class NContentView extends LinearLayout{
 	public NRibbonView getnRibbon() {
 		return nRibbon;
 	}
-//	public void prepareThumbnall(){
-//		String sub_ext = v.getText().substring(v.getText().lastIndexOf(".")+1);
-//		if (sub_ext.equalsIgnoreCase("png") ||
-//				   sub_ext.equalsIgnoreCase("jpg") ||
-//				   sub_ext.equalsIgnoreCase("jpeg")|| 
-//				   sub_ext.equalsIgnoreCase("gif") ||
-//				   sub_ext.equalsIgnoreCase("tiff")) {
-//			if(settings.getBoolean(SettingsActivity.KEY_SETTINGFILE_IMGTHUMB, false)){
-//				thumbnailCreator = new ThumbnailCreator(v.getWidth(), v.getHeight());
-//				
-//				Bitmap thumb = thumbnailCreator.isBitmapCached(file.getPath());
-//	
-//				if (thumb == null) {
-//					final Handler handle = new Handler(new Handler.Callback() {
-//						public boolean handleMessage(Message msg) {
-//							notifyDataSetChanged();
-//							
-//							return true;
-//						}
-//					});
-//									
-//					thumbnailCreator.createNewThumbnail(mDataSource, mFileMang.getCurrentDir(), handle);
-//					
-//					if (!thumbnailCreator.isAlive()) 
-//						thumbnailCreator.start();
-//					
-//				} else {
-//					mViewHolder.icon.setImageBitmap(thumb);
-//				}
-//			
-//			}
-//		}
-//
-//	}
+	public void stopThumbnall(){
+		if(lga != null)lga.stopThumbnailThread();
+	}
 }

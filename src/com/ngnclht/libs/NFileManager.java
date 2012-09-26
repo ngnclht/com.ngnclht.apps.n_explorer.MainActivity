@@ -23,6 +23,7 @@ import android.os.Environment;
 import android.util.Log;
 
 import com.ngnclht.apps.n_explorer.MainActivity;
+import com.ngnclht.apps.n_explorer.NContentView;
 import com.ngnclht.apps.n_explorer.SettingsActivity;
 
 public class NFileManager {
@@ -34,10 +35,11 @@ public class NFileManager {
 	private final int BUFFER = 2048;
 	private long fileSize;
 	private ArrayList<String> imgList;
+	private NContentView nContentView;
 	private static boolean sortAcescing;
 
-	public NFileManager(Context context) {
-		
+	public NFileManager(Context context, NContentView nct) {
+		nContentView = nct;
 		settings = context.getSharedPreferences("SettingsActivity",
 				context.MODE_WORLD_WRITEABLE);
 		String home = settings.getString(SettingsActivity.KEY_SETTING_HOMEDIR,
@@ -73,6 +75,7 @@ public class NFileManager {
 		if(pathStack.size() > 1) pathStack.pop();
 		refreshCurrentDirContent();
 	}
+	
 	// calcula
 	public String getMaxExtensionInFolder(){
 		String ex ="";
@@ -445,6 +448,7 @@ public class NFileManager {
 		}
 	}
 	public void refreshCurrentDirContent() {
+		nContentView.stopThumbnall();
 		if (!currentDirContent.isEmpty())
 			currentDirContent.clear();
 		if (!imgList.isEmpty())
@@ -483,7 +487,7 @@ public class NFileManager {
 								ext.equalsIgnoreCase("jpeg")|| 
 								ext.equalsIgnoreCase("gif") ||
 								ext.equalsIgnoreCase("tiff")) {
-							imgList.add(getCurrentPath()+"/"+list[i]);
+							imgList.add(list[i]);
 						}
 					}
 				}
