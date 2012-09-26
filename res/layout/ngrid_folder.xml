@@ -21,6 +21,6 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world"
         android:textColor="@color/White"
-        android:maxLines="1"
+        android:maxLines="2"
         android:textSize="@dimen/grid_list_small_textsize" />
 </LinearLayout>

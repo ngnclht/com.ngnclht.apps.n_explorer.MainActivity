@@ -3,7 +3,8 @@
     android:id="@+id/amain_rl_ribbon"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/transparent_amain_ribbon_bg" >
+    android:background="@drawable/amain_ribbon_bg" 
+    >
 
     <RelativeLayout
         android:id="@+id/amain_rl_ripbonTitle"
@@ -76,7 +77,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/amain_rl_ripbonTitle"
-        android:gravity="center" >
+        android:gravity="center" 
+        android:paddingTop="-1dp"
+        >
 		
         
     </LinearLayout>

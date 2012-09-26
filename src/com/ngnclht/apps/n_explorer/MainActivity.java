@@ -108,7 +108,7 @@ public class MainActivity extends Activity {
     	}
     	amain_ncontent 						= (NContentView) findViewById(R.id.amain_ncontent);
     	amain_nribbon 						= (NRibbonView) findViewById(R.id.amain_nribbon);
-    	nfilemanager = new NFileManager(this,amain_ncontent);
+    	nfilemanager = new NFileManager(this,amain_ncontent,amain_nribbon);
     	amain_nribbon.prepare(nfilemanager,amain_ncontent);
     	ModelFileIcon modelFileIcon 		= new ModelFileIcon(new DBAdapter(this));
 		ModelFolderStyle modelFolderStyle 	= new ModelFolderStyle(new DBAdapter(this));
@@ -522,44 +522,56 @@ public class MainActivity extends Activity {
 			File[] list = dir.listFiles();
 			if(list != null)
 				len = list.length;
-			
-			for (int i = 0; i < len; i++){
-				if(list[i].isFile())
-					mFileCount++;
-				else if(list[i].isDirectory())
-					mDirCount++;
+			if(len > 0){
+				for (int i = 0; i < len; i++){
+					if(list[i].isFile())
+						mFileCount++;
+					else if(list[i].isDirectory())
+						mDirCount++;
+				}
+				
+				if(path.equals("/")) {				
+					StatFs fss = new StatFs(Environment.getRootDirectory().getPath());
+					size = fss.getAvailableBlocks() * (fss.getBlockSize() / KB);
+					
+					mDisplaySize = (size > GB) ? 
+							String.format("%.2f Gb ", (double)size / MG) :
+							String.format("%.2f Mb ", (double)size / KB);
+					
+				}else if(path.equals("/sdcard")) {
+					StatFs fs = new StatFs(Environment.getExternalStorageDirectory()
+											.getPath());
+					size = fs.getBlockCount() * (fs.getBlockSize() / KB);
+					
+					mDisplaySize = (size > GB) ? 
+						String.format("%.2f Gb ", (double)size / GB) :
+						String.format("%.2f Gb ", (double)size / MG);
+					
+				} else {
+					size = nFileMan.getDirSize(path);
+							
+					if (size > GB)
+						mDisplaySize = String.format("%.2f Gb ", (double)size / GB);
+					else if (size < GB && size > MG)
+						mDisplaySize = String.format("%.2f Mb ", (double)size / MG);
+					else if (size < MG && size > KB)
+						mDisplaySize = String.format("%.2f Kb ", (double)size/ KB);
+					else
+						mDisplaySize = String.format("%.2f bytes ", (double)size);
+				}
 			}
-			
-			if(path.equals("/")) {				
-				StatFs fss = new StatFs(Environment.getRootDirectory().getPath());
-				size = fss.getAvailableBlocks() * (fss.getBlockSize() / KB);
-				
-				mDisplaySize = (size > GB) ? 
-						String.format("%.2f Gb ", (double)size / MG) :
-						String.format("%.2f Mb ", (double)size / KB);
-				
-			}else if(path.equals("/sdcard")) {
-				StatFs fs = new StatFs(Environment.getExternalStorageDirectory()
-										.getPath());
-				size = fs.getBlockCount() * (fs.getBlockSize() / KB);
-				
-				mDisplaySize = (size > GB) ? 
-					String.format("%.2f Gb ", (double)size / GB) :
-					String.format("%.2f Gb ", (double)size / MG);
-				
-			} else {
-				size = nFileMan.getDirSize(path);
-						
-				if (size > GB)
-					mDisplaySize = String.format("%.2f Gb ", (double)size / GB);
-				else if (size < GB && size > MG)
-					mDisplaySize = String.format("%.2f Mb ", (double)size / MG);
-				else if (size < MG && size > KB)
-					mDisplaySize = String.format("%.2f Kb ", (double)size/ KB);
+			/* file properties */
+			else{
+				long filesize = dir.length();
+				if (filesize > GB)
+					mDisplaySize = String.format("%.2f Gb ", (double)filesize / GB);
+				else if (filesize < GB && filesize > MG)
+					mDisplaySize = String.format("%.2f Mb ", (double)filesize / MG);
+				else if (filesize < MG && filesize > KB)
+					mDisplaySize = String.format("%.2f Kb ", (double)filesize/ KB);
 				else
-					mDisplaySize = String.format("%.2f bytes ", (double)size);
+					mDisplaySize = String.format("%.2f bytes ", (double)filesize);
 			}
-			
 			return size;
 		}
 		

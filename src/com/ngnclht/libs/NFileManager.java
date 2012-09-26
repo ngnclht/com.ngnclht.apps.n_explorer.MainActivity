@@ -24,6 +24,7 @@ import android.util.Log;
 
 import com.ngnclht.apps.n_explorer.MainActivity;
 import com.ngnclht.apps.n_explorer.NContentView;
+import com.ngnclht.apps.n_explorer.NRibbonView;
 import com.ngnclht.apps.n_explorer.SettingsActivity;
 
 public class NFileManager {
@@ -36,10 +37,12 @@ public class NFileManager {
 	private long fileSize;
 	private ArrayList<String> imgList;
 	private NContentView nContentView;
+	private NRibbonView nRibbonView;
 	private static boolean sortAcescing;
 
-	public NFileManager(Context context, NContentView nct) {
+	public NFileManager(Context context, NContentView nct, NRibbonView nrb) {
 		nContentView = nct;
+		nRibbonView  = nrb;
 		settings = context.getSharedPreferences("SettingsActivity",
 				context.MODE_WORLD_WRITEABLE);
 		String home = settings.getString(SettingsActivity.KEY_SETTING_HOMEDIR,
@@ -449,11 +452,11 @@ public class NFileManager {
 	}
 	public void refreshCurrentDirContent() {
 		nContentView.stopThumbnall();
+		nRibbonView.setAddressBar(getCurrentPath());
 		if (!currentDirContent.isEmpty())
 			currentDirContent.clear();
 		if (!imgList.isEmpty())
 			imgList.clear();
-
 		File file = new File(getCurrentDir());
 
 		if (file.exists() && file.canRead()) {

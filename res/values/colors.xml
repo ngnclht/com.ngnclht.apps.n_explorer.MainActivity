@@ -5,6 +5,7 @@
     
     <!-- background's color -->
     <color name="transparent_amain_ribbon_bg">#AA4B8AEE</color>
+    <color name="transparent_amain_ribbon_bg2">#AA646363</color>
     
     <!-- selector's color -->
     <color name="transparent_amain_selectorribbon_button_bg">#AAECC8C8</color>

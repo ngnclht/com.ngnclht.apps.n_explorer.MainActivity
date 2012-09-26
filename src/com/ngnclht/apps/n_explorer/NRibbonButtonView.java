@@ -10,6 +10,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.view.ViewGroup.MarginLayoutParams;
 
 import com.ngnclht.apps.n_explorer.Nclass.ButtonInfo;
 
@@ -19,7 +20,7 @@ public class NRibbonButtonView extends View{
 	private Bitmap 		image;
 	private Resources res;
 	
-	private  int HEIGHT_PADDING=10;
+	private  int HEIGHT_PADDING=1;
 	private  int HEIGHT;
 	private  int WIDTH;
 	private boolean active;
@@ -33,8 +34,10 @@ public class NRibbonButtonView extends View{
 		setFocusable(true);
 		setBackgroundResource(R.drawable.selector_ribbon_button_bg);
 		setClickable(true);
-		setLayoutParams(new LayoutParams(WIDTH,HEIGHT));
-		
+//		setLayoutParams(new LayoutParams(WIDTH,HEIGHT));
+		MarginLayoutParams mlp = new MarginLayoutParams(new LayoutParams(WIDTH,HEIGHT));
+		mlp.setMargins(1, 1, 1, 1);
+		setLayoutParams(mlp);
 		init(bi, true, false, false);
 	}
 	public void init(ButtonInfo bi,boolean callfromOncreate, boolean disable, boolean active){
@@ -59,11 +62,12 @@ public class NRibbonButtonView extends View{
 		super.onDraw(canvas);
 		
 		int xStartPos = (int)(WIDTH - image.getWidth())/2;
-		int yStartPos = (int)(WIDTH - image.getHeight())/2-HEIGHT_PADDING;
+		int yStartPos =  HEIGHT_PADDING;
 		canvas.drawBitmap(image, xStartPos, yStartPos, null);
-		
+		// align text to center
 		Paint textPaint = new Paint();
 		textPaint.setColor(Color.BLACK);
+		textPaint.setTextSize(getResources().getDimension(R.dimen.amain_ribbonToolbar_textsize));
 		String text = (String) getResources().getText(buttonInfo.textRid);
 		Rect bounds = new Rect();
 		textPaint.getTextBounds(text, 0, text.length(), bounds);

@@ -49,6 +49,7 @@ public class NRibbonView extends RelativeLayout {
 	private NContentView nContentView;
 	private NRibbonButtonView viewButton;
 	private BackgroundTask bgtask;
+	private TextView amain_tv_address;
 
 	public NRibbonView(Context context, AttributeSet arrt) {
 		super(context, arrt);
@@ -84,6 +85,7 @@ public class NRibbonView extends RelativeLayout {
 	public void initViewControl() {
 
 		amain_rl_ripbonTitleArea = (RelativeLayout) findViewById(R.id.amain_rl_ripbonTitle);
+		amain_tv_address = (TextView) findViewById(R.id.amain_tv_address);	
 		amain_rl_ripbonButtonArea = (LinearLayout) findViewById(R.id.amain_rl_ribbonToolbar);
 
 		amain_bt_ribbonHome = (Button) findViewById(R.id.amain_bt_ribbonHome);
@@ -417,5 +419,8 @@ public class NRibbonView extends RelativeLayout {
 			}
 		}
 		return null;
+	}
+	public void setAddressBar(String add) {
+		this.amain_tv_address.setText(add);
 	}
 }

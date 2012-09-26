@@ -72,9 +72,10 @@ public class ListGridAdapter extends BaseAdapter{
 		
 		v.setText(data.get(position));
 		v.setImage();
+		v.setDetail(f);
 		if(thumbnailCreator == null) 
 			thumbnailCreator = new ThumbnailCreator(54, 54);
-		//  check weather item is image
+		//  check weather item is image, create thubnall for it
 		String item_ext = f.getPath().substring(f.getPath().lastIndexOf(".")+1);
 		if (item_ext.equalsIgnoreCase("png") ||
 				item_ext.equalsIgnoreCase("jpg") ||

@@ -1,6 +1,7 @@
 package com.ngnclht.apps.n_explorer;
 
 import java.io.File;
+import java.sql.Date;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -51,26 +52,28 @@ public class NFolderView extends LinearLayout{
 		ff_detail = (TextView) findViewById(R.id.ff_detail);
 		
 		// adjust icon's size
+		ff_text.setTextSize(res.getDimension(R.dimen.grid_list_small_textsize));
+		if(ff_detail != null) ff_detail.setTextSize(res.getDimension(R.dimen.grid_list_small_textsize_small));
 		switch (settings.getInt(SettingsActivity.KEY_SETTING_ICONSIZE, 1)) {
 		case SettingsActivity.ICONSIZE_SMALL:
 			ff_img.setLayoutParams(new LayoutParams((int)res.getDimension(R.dimen.grid_list_small)+WIDTHPLUS, (int)res.getDimension(R.dimen.grid_list_small)+WIDTHPLUS));
-			ff_text.setTextSize(res.getDimension(R.dimen.grid_list_small_textsize));
-			if(ff_detail != null) ff_detail.setTextSize(res.getDimension(R.dimen.grid_list_small_textsize_small));
+//			ff_text.setTextSize(res.getDimension(R.dimen.grid_list_small_textsize));
+//			if(ff_detail != null) ff_detail.setTextSize(res.getDimension(R.dimen.grid_list_small_textsize_small));
 			break;
 		case SettingsActivity.ICONSIZE_NORMAL:
 			ff_img.setLayoutParams(new LayoutParams((int)res.getDimension(R.dimen.grid_list_normal)+WIDTHPLUS, (int)res.getDimension(R.dimen.grid_list_normal)+WIDTHPLUS));
-			ff_text.setTextSize(res.getDimension(R.dimen.grid_list_normal_textsize));
-			if(ff_detail != null) ff_detail.setTextSize(res.getDimension(R.dimen.grid_list_normal_textsize_small));
+//			ff_text.setTextSize(res.getDimension(R.dimen.grid_list_normal_textsize));
+//			if(ff_detail != null) ff_detail.setTextSize(res.getDimension(R.dimen.grid_list_normal_textsize_small));
 			break;
 		case SettingsActivity.ICONSIZE_LARGE:
 			ff_img.setLayoutParams(new LayoutParams((int)res.getDimension(R.dimen.grid_list_large)+WIDTHPLUS, (int)res.getDimension(R.dimen.grid_list_large)+WIDTHPLUS));
-			ff_text.setTextSize(res.getDimension(R.dimen.grid_list_large_textsize));
-			if(ff_detail != null) ff_detail.setTextSize(res.getDimension(R.dimen.grid_list_large_textsize_small));
+//			ff_text.setTextSize(res.getDimension(R.dimen.grid_list_large_textsize));
+//			if(ff_detail != null) ff_detail.setTextSize(res.getDimension(R.dimen.grid_list_large_textsize_small));
 			break;
 		case SettingsActivity.ICONSIZE_ELARGE:
 			ff_img.setLayoutParams(new LayoutParams((int)res.getDimension(R.dimen.grid_list_elarge)+WIDTHPLUS, (int)res.getDimension(R.dimen.grid_list_elarge)+WIDTHPLUS));
-			ff_text.setTextSize(res.getDimension(R.dimen.grid_list_elarge_textsize));
-			if(ff_detail != null) ff_detail.setTextSize(res.getDimension(R.dimen.grid_list_elarge_textsize_small));
+//			ff_text.setTextSize(res.getDimension(R.dimen.grid_list_elarge_textsize));
+//			if(ff_detail != null) ff_detail.setTextSize(res.getDimension(R.dimen.grid_list_elarge_textsize_small));
 			break;
 		}
 	}
@@ -109,6 +112,22 @@ public class NFolderView extends LinearLayout{
 	}
 	public void setImageBitmap(Bitmap bmp){
 		ff_img.setImageBitmap(bmp);
+	}
+	public void setDetail(File f){
+		int view = settings.getInt(SettingsActivity.KEY_SETTING_VIEW, SettingsActivity.VIEW_MATRIX);
+		if(view != SettingsActivity.VIEW_MATRIX)
+			if(view == SettingsActivity.VIEW_LISTDETAIL){
+				String detail = "-";
+				if(f.isDirectory()) detail += "d";
+				if(f.canRead()) detail += "r";
+				if(f.canWrite()) detail += "w";
+				Date date = new Date(f.lastModified());
+				detail +=  " "+date.toString();
+				
+				ff_detail.setText(detail);
+			} else{
+				ff_detail.setText("");
+			}
 	}
 	public void setItemSelected(){
 		selected = true;
