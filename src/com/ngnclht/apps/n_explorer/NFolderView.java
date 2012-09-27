@@ -52,8 +52,8 @@ public class NFolderView extends LinearLayout{
 		ff_detail = (TextView) findViewById(R.id.ff_detail);
 		
 		// adjust icon's size
-		ff_text.setTextSize(res.getDimension(R.dimen.grid_list_small_textsize));
-		if(ff_detail != null) ff_detail.setTextSize(res.getDimension(R.dimen.grid_list_small_textsize_small));
+//		ff_text.setTextSize(res.getDimension(R.dimen.grid_list_small_textsize));
+//		if(ff_detail != null) ff_detail.setTextSize(res.getDimension(R.dimen.grid_list_small_textsize_small));
 		switch (settings.getInt(SettingsActivity.KEY_SETTING_ICONSIZE, 1)) {
 		case SettingsActivity.ICONSIZE_SMALL:
 			ff_img.setLayoutParams(new LayoutParams((int)res.getDimension(R.dimen.grid_list_small)+WIDTHPLUS, (int)res.getDimension(R.dimen.grid_list_small)+WIDTHPLUS));

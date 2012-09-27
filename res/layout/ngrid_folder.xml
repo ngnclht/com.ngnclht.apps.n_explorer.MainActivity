@@ -22,5 +22,6 @@
         android:text="@string/hello_world"
         android:textColor="@color/White"
         android:maxLines="2"
+        android:layout_margin="1dp"
         android:textSize="@dimen/grid_list_small_textsize" />
 </LinearLayout>

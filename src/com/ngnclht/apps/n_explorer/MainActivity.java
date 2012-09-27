@@ -7,6 +7,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -46,6 +47,7 @@ import android.widget.Toast;
 import com.ngnclht.libs.NFileManager;
 import com.ngnclht.libs.NStringEncription;
 
+@SuppressLint({ "ShowToast", "ShowToast" })
 public class MainActivity extends Activity {
 	
     private SharedPreferences 		settings;
@@ -186,7 +188,6 @@ public class MainActivity extends Activity {
     public final static int CMENU_CUT 			= 2;
     public final static int CMENU_PASTE 			= 3;
     public final static int CMENU_DELETE 			= 4;
-    public final static int CMENU_RENAME 			= 5;
     
     public final static int CMENU_SHORTCUT 		= 6;
     public final static int CMENU_SETHOME 		= 7;
@@ -196,7 +197,7 @@ public class MainActivity extends Activity {
     public final static int CMENU_HIDE 			= 11;
     
     public final static int CMENU_PROPERTIES 	= 12;
-    public final static int CMENU_OPEN 			= 13;
+    public final static int CMENU_RENAME 			= 13;
     
     
     @Override
@@ -206,26 +207,59 @@ public class MainActivity extends Activity {
     	super.onCreateContextMenu(menu, v, menuInfo);
     	AdapterContextMenuInfo info = (AdapterContextMenuInfo)menuInfo;
     	amain_ncontent.setSelectSingle(nfilemanager.getCurrentDir()+"/"+nfilemanager.getCurrentDirContent().get(info.position));
-    		
+    	File f = new File(amain_ncontent.getSelectSingle());	
     	
     	menu.setHeaderTitle(res.getString(R.string.amain_code_cmenu_headertitle));
-    	menu.add(0,CMENU_COPY,5,res.getString(R.string.amain_code_cmenu_copy));
-    	menu.add(0,CMENU_CUT,5,res.getString(R.string.amain_code_cmenu_cut));
-    	menu.add(0,CMENU_DELETE,5,res.getString(R.string.amain_code_cmenu_delete));
+    	menu.add(0,CMENU_COPY,5,res.getString(R.string.amain_code_cmenu_copy)).setEnabled(f.canRead());
+    	menu.add(0,CMENU_CUT,5,res.getString(R.string.amain_code_cmenu_cut)).setEnabled(f.canWrite());
+    	menu.add(0,CMENU_DELETE,5,res.getString(R.string.amain_code_cmenu_delete)).setEnabled(f.canWrite());
     	menu.add(0,CMENU_HIDE,5,res.getString(R.string.amain_code_cmenu_hide));
-    	menu.add(0,CMENU_OPEN,0,res.getString(R.string.amain_code_cmenu_open));
+    	menu.add(0,CMENU_RENAME,0,res.getString(R.string.amain_code_cmenu_rename)).setEnabled(f.canWrite());
     	menu.add(0,CMENU_PASTE,5,res.getString(R.string.amain_code_cmenu_paste)).setEnabled(!amain_ncontent.isClipboardEmpty());
-    	menu.add(0,CMENU_PROPERTIES,10,res.getString(R.string.amain_code_cmenu_properties));
+    	menu.add(0,CMENU_PROPERTIES,10,res.getString(R.string.amain_code_cmenu_properties)).setEnabled(f.canRead());
     	menu.add(0,CMENU_SELECTALL,5,res.getString(R.string.amain_code_cmenu_selectall));
     	menu.add(0,CMENU_SELECTINVERT,5,res.getString(R.string.amain_code_cmenu_selectinvert));
-    	menu.add(0,CMENU_SETFAVOUR,5,res.getString(R.string.amain_code_cmenu_setfavour)).setEnabled(new File(amain_ncontent.getSelectSingle()).isDirectory());
-    	menu.add(0,CMENU_SETHOME,5,res.getString(R.string.amain_code_cmenu_sethome)).setEnabled(new File(amain_ncontent.getSelectSingle()).isDirectory());
-    	menu.add(0,CMENU_SHORTCUT,5,res.getString(R.string.amain_code_cmenu_shortcut)).setEnabled(new File(amain_ncontent.getSelectSingle()).isDirectory());
+    	menu.add(0,CMENU_SETFAVOUR,5,res.getString(R.string.amain_code_cmenu_setfavour)).setEnabled(f.isDirectory() && f.canRead());
+    	menu.add(0,CMENU_SETHOME,5,res.getString(R.string.amain_code_cmenu_sethome)).setEnabled(f.isDirectory() && f.canRead());
+    	menu.add(0,CMENU_SHORTCUT,5,res.getString(R.string.amain_code_cmenu_shortcut)).setEnabled(f.isDirectory() && f.canRead());
     }
     @Override
     public boolean onContextItemSelected(MenuItem item) {
     	// TODO Auto-generated method stub
     	switch (item.getItemId()) {
+    	case CMENU_RENAME:
+    		final Dialog enterText = new Dialog(this);
+    		enterText.setTitle(res.getString(R.string.menu_new_enterpath));
+    		enterText.setContentView(R.layout.activity_settings_dir_dialogs);
+    		final EditText content = (EditText) enterText.findViewById(R.id.asetting_dialog_homedir_content);
+    		Button cancel = (Button) enterText.findViewById(R.id.asetting_dialog_homedir_cancelbutton);
+    		Button ok = (Button) enterText.findViewById(R.id.asetting_dialog_homedir_okbutton);
+    		
+    		String old = amain_ncontent.getSelectSingle().substring(amain_ncontent.getSelectSingle().lastIndexOf("/")+1);
+    		content.setText(old);
+    		cancel.setOnClickListener(new View.OnClickListener() {
+    			@Override
+    			public void onClick(View v) {
+    				enterText.dismiss();
+    			}
+    		});
+    		ok.setOnClickListener(new View.OnClickListener() {
+    			@Override
+    			public void onClick(View v) {
+    				String newName = content.getText().toString();
+    				if(!newName.equals("")) {
+    					if(nfilemanager.renameTarget(amain_ncontent.getSelectSingle(), newName) == 0) 
+    						Toast.makeText(MainActivity.this, getResources().getString(R.string.menu_rename_success), Toast.LENGTH_SHORT);
+    					else Toast.makeText(MainActivity.this, getResources().getString(R.string.menu_rename_errors), Toast.LENGTH_SHORT);
+    					
+    					enterText.dismiss();
+    					amain_ncontent.updateView();
+    				}
+    			}
+    		});
+    		enterText.show();
+    		
+    		break;
 		case CMENU_COPY:
 			amain_nribbon.loadRibbon("Edit");
 			amain_ncontent.addToClipBoard(false);

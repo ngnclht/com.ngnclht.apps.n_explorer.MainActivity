@@ -195,7 +195,7 @@
     <string name="amain_code_cmenu_cut">Cắt</string>
     <string name="amain_code_cmenu_delete">Xóa</string>
     <string name="amain_code_cmenu_hide">Ẩn</string>
-    <string name="amain_code_cmenu_open">Mở</string>
+    <string name="amain_code_cmenu_rename">Mở</string>
     <string name="amain_code_cmenu_paste">Dán</string>
     <string name="amain_code_cmenu_properties">Thông tin</string>
     <string name="amain_code_cmenu_selectall">Chọn tất cả</string>
@@ -244,6 +244,9 @@
     <string name="_folders">Thư mục</string>
     
     <string name="_login">Vui lòng nhập mật khẩu</string>
+   
+	<string name="menu_rename_errors">Không đổi tên được</string>
+     <string name="menu_rename_success">Đổi tên thành công</string>
     
     <string name="paste_fileexist_title">Có một số file bị trùng, có ghi đè hay không?</string>
     <string name="paste_fileexist">File bị trùng, ghi đè?</string>

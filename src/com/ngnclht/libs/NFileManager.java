@@ -22,7 +22,9 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 
+import com.ngnclht.apps.n_explorer.DBAdapter;
 import com.ngnclht.apps.n_explorer.MainActivity;
+import com.ngnclht.apps.n_explorer.ModelHide;
 import com.ngnclht.apps.n_explorer.NContentView;
 import com.ngnclht.apps.n_explorer.NRibbonView;
 import com.ngnclht.apps.n_explorer.SettingsActivity;
@@ -38,11 +40,13 @@ public class NFileManager {
 	private ArrayList<String> imgList;
 	private NContentView nContentView;
 	private NRibbonView nRibbonView;
+	private Context context;
 	private static boolean sortAcescing;
 
 	public NFileManager(Context context, NContentView nct, NRibbonView nrb) {
 		nContentView = nct;
 		nRibbonView  = nrb;
+		this.context = context;
 		settings = context.getSharedPreferences("SettingsActivity",
 				context.MODE_WORLD_WRITEABLE);
 		String home = settings.getString(SettingsActivity.KEY_SETTING_HOMEDIR,
@@ -464,10 +468,15 @@ public class NFileManager {
 			int len = list.length;
 
 			/* add files/folder to arraylist depending on hidden status */
+			
 			for (int i = 0; i < len; i++) {
-				if (settings.getBoolean(
-						SettingsActivity.KEY_SETTINGFILE_HIDDEN, false)) {
-					if (list[i].toString().charAt(0) != '.'){
+				if (!settings.getBoolean(
+						SettingsActivity.KEY_SETTINGFILE_HIDDEN, true)) {
+					ModelHide mHide = new ModelHide(new DBAdapter(context)) ;
+					ArrayList<String> hidenList = mHide.getAllItem();
+					String path = getCurrentDir()+"/"+list[i];
+					// only display path that not exist in hidden list
+					if (list[i].toString().charAt(0) != '.' && hidenList.indexOf(path) == -1){
 						currentDirContent.add(list[i]);
 						if(list[i].lastIndexOf(".")!=-1){
 							String ext = list[i].substring(list[i].lastIndexOf(".")+1);

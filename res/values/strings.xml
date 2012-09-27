@@ -195,7 +195,7 @@
     <string name="amain_code_cmenu_cut">Cut</string>
     <string name="amain_code_cmenu_delete">Delete</string>
     <string name="amain_code_cmenu_hide">Hide</string>
-    <string name="amain_code_cmenu_open">Open</string>
+    <string name="amain_code_cmenu_rename">Rename</string>
     <string name="amain_code_cmenu_paste">Paste</string>
     <string name="amain_code_cmenu_properties">Properties</string>
     <string name="amain_code_cmenu_selectall">Select All</string>
@@ -244,6 +244,9 @@
     <string name="_folders">Folders</string>
     
     <string name="_login">Please input password to login</string>
+     <string name="menu_rename_title">Please input new name</string>
+     <string name="menu_rename_errors">Can not rename</string>
+     <string name="menu_rename_success">Rename success</string>
     
     <string name="paste_fileexist_title">Some files is exist, click ok to override, cancel to skip file</string>
     <string name="paste_fileexist">File is exist, override it?</string>
