@@ -201,6 +201,8 @@
     <string name="amain_code_cmenu_selectall">Select All</string>
     <string name="amain_code_cmenu_selectinvert">Select Invert</string>
     <string name="amain_code_cmenu_setfavour">Add to favourite</string>
+    <string name="amain_code_cmenu_unsetfavour">Remove from favourite</string>
+    <string name="amain_code_cmenu_unhide">Unhide</string>
     <string name="amain_code_cmenu_sethome">Set as home directory</string>
     <string name="amain_code_cmenu_shortcut">Create shortcut</string>
     

@@ -186,7 +186,7 @@ public class NRibbonView extends RelativeLayout {
 					button.setDisable();
 				}
 			}
-			// update view for button cancel (clearcliipboard)
+			// update view for button cancel (clear clipboard)
 			if (button.getText() == (String) getResources().getText(R.string.amain_button_function_cancel) && nContentView != null){
 				if(nContentView.isClipboardEmpty()) button.setDisable();
 				else button.setEnable();
@@ -373,6 +373,11 @@ public class NRibbonView extends RelativeLayout {
 						});
 						new MainActivity.BackgroundDirCalculator((MainActivity)context,nFileMan, dialog, nFileMan.getCurrentPath()).execute(null);
 						return;
+					}
+					// button favourite
+					if (b.getText() == (String) getResources().getText(R.string.amain_button_function_favourite)) {
+						nFileMan.gotoFavourite();
+						nContentView.notifyDataSetChanged();
 					}
 				}
 			});

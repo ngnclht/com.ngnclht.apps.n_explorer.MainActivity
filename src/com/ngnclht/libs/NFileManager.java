@@ -24,6 +24,7 @@ import android.util.Log;
 
 import com.ngnclht.apps.n_explorer.DBAdapter;
 import com.ngnclht.apps.n_explorer.MainActivity;
+import com.ngnclht.apps.n_explorer.ModelFavour;
 import com.ngnclht.apps.n_explorer.ModelHide;
 import com.ngnclht.apps.n_explorer.NContentView;
 import com.ngnclht.apps.n_explorer.NRibbonView;
@@ -34,6 +35,7 @@ public class NFileManager {
 	private SharedPreferences settings;
 	private Stack<String> pathStack;
 	private ArrayList<String> currentDirContent;
+	private ArrayList<String> currentDirContentFullPath;
 	private String currentPath;
 	private final int BUFFER = 2048;
 	private long fileSize;
@@ -72,11 +74,24 @@ public class NFileManager {
 				SettingsActivity.KEY_SETTING_SORTINGVECTOR, 1) == SettingsActivity.SORT_ASCENDING) ? true
 				: false;
 		currentDirContent = new ArrayList<String>();
+		currentDirContentFullPath = new ArrayList<String>();
 		imgList			  = new ArrayList<String>();
 		refreshCurrentDirContent();
 	}
+	public void gotoFavourite(){
+		ModelFavour mf = new ModelFavour(new DBAdapter(context));
+		currentDirContentFullPath = mf.getAllItem();
+		currentDirContent.clear();
+		for (String fullPath : currentDirContentFullPath) {
+			currentDirContent.add(fullPath.substring(fullPath.lastIndexOf("/")+ 1));
+		}
+		
+	}
 	public void gotoHome(){
 		gotoDir(settings.getString(SettingsActivity.KEY_SETTING_HOMEDIR,"/sdcard"));
+	}
+	public ArrayList<String> getCurrentDirContentFullPath() {
+		return currentDirContentFullPath;
 	}
 	public void goBack() {
 		if(pathStack.size() > 1) pathStack.pop();
@@ -90,7 +105,7 @@ public class NFileManager {
 	}
 	public boolean goUp(){
 		String parentPath  = new File(pathStack.peek()).getParent();
-		Log.e("goUp", "" + String.valueOf(parentPath));
+		Log.v("goUp", "" + String.valueOf(parentPath));
 		if(!settings.getBoolean(SettingsActivity.KEY_SETTING_UPTOROOT, false)){
 			if(parentPath.equals("/")) return false;
 		}
@@ -138,7 +153,6 @@ public class NFileManager {
 				o_stream.flush();
 				i_stream.close();
 				o_stream.close();
-				
 			} catch (FileNotFoundException e) {
 				Log.e("FileNotFoundException", e.getMessage());
 				return -1;
@@ -457,8 +471,10 @@ public class NFileManager {
 	public void refreshCurrentDirContent() {
 		nContentView.stopThumbnall();
 		nRibbonView.setAddressBar(getCurrentPath());
-		if (!currentDirContent.isEmpty())
+		if (!currentDirContent.isEmpty()){
+			currentDirContentFullPath.clear();
 			currentDirContent.clear();
+		}
 		if (!imgList.isEmpty())
 			imgList.clear();
 		File file = new File(getCurrentDir());
@@ -515,6 +531,7 @@ public class NFileManager {
 
 				for (Object a : tt) {
 					currentDirContent.add((String) a);
+					currentDirContentFullPath.add(getCurrentPath()+"/"+(String) a);
 				}
 				break;
 
@@ -527,10 +544,14 @@ public class NFileManager {
 
 				currentDirContent.clear();
 				for (Object a : size_ar) {
-					if (new File(dir + "/" + (String) a).isDirectory())
+					if (new File(dir + "/" + (String) a).isDirectory()){
 						currentDirContent.add(index++, (String) a);
-					else
+						currentDirContentFullPath.add(index++,getCurrentPath()+"/"+(String) a);
+					}
+					else{
 						currentDirContent.add((String) a);
+						currentDirContentFullPath.add(getCurrentPath()+"/"+(String) a);
+					}
 				}
 				break;
 
@@ -543,10 +564,14 @@ public class NFileManager {
 				currentDirContent.clear();
 
 				for (Object a : type_ar) {
-					if (new File(current + "/" + (String) a).isDirectory())
+					if (new File(current + "/" + (String) a).isDirectory()){
 						currentDirContent.add(dirindex++, (String) a);
-					else
+						currentDirContentFullPath.add(dirindex++,getCurrentPath()+"/"+(String) a);
+					}
+					else{
 						currentDirContent.add((String) a);
+						currentDirContentFullPath.add(getCurrentPath()+"/"+(String) a);
+					}
 				}
 				break;
 			case SettingsActivity.SORT_BYEXTENSION:
@@ -557,10 +582,14 @@ public class NFileManager {
 				currentDirContent.clear();
 
 				for (Object a : type_arr) {
-					if (new File(currents + "/" + (String) a).isDirectory())
+					if (new File(currents + "/" + (String) a).isDirectory()){
 						currentDirContent.add(i++, (String) a);
-					else
+						currentDirContentFullPath.add(i++,getCurrentPath()+"/"+(String) a);
+					}
+					else{
 						currentDirContent.add((String) a);
+						currentDirContentFullPath.add(getCurrentPath()+"/"+(String) a);
+					}
 				}
 				break;
 			

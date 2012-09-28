@@ -1,13 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ngnclht.apps.n_explorer"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0" android:installLocation="auto">
 
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="15" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+	
     <application
         android:icon="@drawable/nexploreicon"
         android:label="@string/app_name"

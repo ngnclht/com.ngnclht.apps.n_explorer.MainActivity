@@ -1,6 +1,7 @@
 package com.ngnclht.apps.n_explorer;
 
 
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -137,6 +138,20 @@ public class MainActivity extends Activity {
 		default:
 			break;
 		}
+    	
+//    	if(settings.getBoolean(SettingsActivity.KEY_SETTING_ROOTEXPLORER, false)){
+//               // Preform su to get root privledges  
+//        	try {
+//        	      Process process = Runtime.getRuntime().exec("su");
+//        	      process.waitFor();
+//        	    } catch (IOException e) {
+//        	      e.printStackTrace();
+//        	    } catch (InterruptedException e) {
+//        	      e.printStackTrace();
+//        	    } 
+//    	}
+//    	File f = new File("/giangnam");
+//    	f.mkdir();
     	res      = getResources();
     	// TODO if locked
     	if(settings.getBoolean(SettingsActivity.KEY_SETTINGSECU_PROTECT, false)){
@@ -186,18 +201,20 @@ public class MainActivity extends Activity {
     public final static String CMENU_BACKSTATE_INTENT 	= "backstate";
     public final static int CMENU_COPY 			= 1;
     public final static int CMENU_CUT 			= 2;
-    public final static int CMENU_PASTE 			= 3;
-    public final static int CMENU_DELETE 			= 4;
+    public final static int CMENU_PASTE 		= 3;
+    public final static int CMENU_DELETE 		= 4;
     
     public final static int CMENU_SHORTCUT 		= 6;
     public final static int CMENU_SETHOME 		= 7;
     public final static int CMENU_SETFAVOUR 	= 8;
+    public final static int CMENU_UNFAVOUR 		= 14;
     public final static int CMENU_SELECTALL 	= 9;
     public final static int CMENU_SELECTINVERT 	= 10;
     public final static int CMENU_HIDE 			= 11;
+    public final static int CMENU_UNHIDE 		= 5;
     
     public final static int CMENU_PROPERTIES 	= 12;
-    public final static int CMENU_RENAME 			= 13;
+    public final static int CMENU_RENAME 		= 13;
     
     
     @Override
@@ -208,20 +225,28 @@ public class MainActivity extends Activity {
     	AdapterContextMenuInfo info = (AdapterContextMenuInfo)menuInfo;
     	amain_ncontent.setSelectSingle(nfilemanager.getCurrentDir()+"/"+nfilemanager.getCurrentDirContent().get(info.position));
     	File f = new File(amain_ncontent.getSelectSingle());	
+    	ModelHide mh = new ModelHide(new DBAdapter(MainActivity.this));
+    	ModelFavour mf = new ModelFavour(new DBAdapter(MainActivity.this));
+    	boolean isHidden = mh.getAllItem().indexOf(nfilemanager.getCurrentPath()+"/"+nfilemanager.getCurrentDirContent().get(info.position)) == -1;
+    	boolean isFavour = mf.getAllItem().indexOf(nfilemanager.getCurrentPath()+"/"+nfilemanager.getCurrentDirContent().get(info.position)) == -1;
     	
     	menu.setHeaderTitle(res.getString(R.string.amain_code_cmenu_headertitle));
-    	menu.add(0,CMENU_COPY,5,res.getString(R.string.amain_code_cmenu_copy)).setEnabled(f.canRead());
-    	menu.add(0,CMENU_CUT,5,res.getString(R.string.amain_code_cmenu_cut)).setEnabled(f.canWrite());
-    	menu.add(0,CMENU_DELETE,5,res.getString(R.string.amain_code_cmenu_delete)).setEnabled(f.canWrite());
-    	menu.add(0,CMENU_HIDE,5,res.getString(R.string.amain_code_cmenu_hide));
     	menu.add(0,CMENU_RENAME,0,res.getString(R.string.amain_code_cmenu_rename)).setEnabled(f.canWrite());
-    	menu.add(0,CMENU_PASTE,5,res.getString(R.string.amain_code_cmenu_paste)).setEnabled(!amain_ncontent.isClipboardEmpty());
-    	menu.add(0,CMENU_PROPERTIES,10,res.getString(R.string.amain_code_cmenu_properties)).setEnabled(f.canRead());
-    	menu.add(0,CMENU_SELECTALL,5,res.getString(R.string.amain_code_cmenu_selectall));
-    	menu.add(0,CMENU_SELECTINVERT,5,res.getString(R.string.amain_code_cmenu_selectinvert));
-    	menu.add(0,CMENU_SETFAVOUR,5,res.getString(R.string.amain_code_cmenu_setfavour)).setEnabled(f.isDirectory() && f.canRead());
-    	menu.add(0,CMENU_SETHOME,5,res.getString(R.string.amain_code_cmenu_sethome)).setEnabled(f.isDirectory() && f.canRead());
-    	menu.add(0,CMENU_SHORTCUT,5,res.getString(R.string.amain_code_cmenu_shortcut)).setEnabled(f.isDirectory() && f.canRead());
+    	
+    	menu.add(0,CMENU_COPY,1,res.getString(R.string.amain_code_cmenu_copy)).setEnabled(f.canRead());
+    	menu.add(0,CMENU_CUT,2,res.getString(R.string.amain_code_cmenu_cut)).setEnabled(f.canWrite());
+    	menu.add(0,CMENU_DELETE,3,res.getString(R.string.amain_code_cmenu_delete)).setEnabled(f.canWrite());
+    	menu.add(0,CMENU_HIDE,4,res.getString(R.string.amain_code_cmenu_hide)).setEnabled(isHidden);
+    	menu.add(0,CMENU_UNHIDE,5,res.getString(R.string.amain_code_cmenu_unhide)).setEnabled(!isHidden);
+    	menu.add(0,CMENU_PASTE,6,res.getString(R.string.amain_code_cmenu_paste)).setEnabled(!amain_ncontent.isClipboardEmpty());
+    	
+    	menu.add(0,CMENU_SELECTALL,7,res.getString(R.string.amain_code_cmenu_selectall));
+    	menu.add(0,CMENU_SELECTINVERT,8,res.getString(R.string.amain_code_cmenu_selectinvert));
+    	menu.add(0,CMENU_SETFAVOUR,9,res.getString(R.string.amain_code_cmenu_setfavour)).setEnabled(f.isDirectory() && f.canRead() && isFavour);
+    	menu.add(0,CMENU_UNFAVOUR,10,res.getString(R.string.amain_code_cmenu_unsetfavour)).setEnabled(!isFavour);
+    	menu.add(0,CMENU_SETHOME,11,res.getString(R.string.amain_code_cmenu_sethome)).setEnabled(f.isDirectory() && f.canRead());
+    	menu.add(0,CMENU_SHORTCUT,12,res.getString(R.string.amain_code_cmenu_shortcut)).setEnabled(f.isDirectory() && f.canRead());
+    	menu.add(0,CMENU_PROPERTIES,13,res.getString(R.string.amain_code_cmenu_properties)).setEnabled(f.canRead());
     }
     @Override
     public boolean onContextItemSelected(MenuItem item) {
@@ -306,6 +331,11 @@ public class MainActivity extends Activity {
 			ModelFavour mf = new ModelFavour(new DBAdapter(this));
 			if(mf.addItem(amain_ncontent.getSelectSingle())) Toast.makeText(MainActivity.this, res.getString(R.string.amain_code_cmenu_setfavoursuccess), Toast.LENGTH_SHORT).show();
 			else Toast.makeText(MainActivity.this, res.getString(R.string.amain_code_cmenu_setfavourfailed), Toast.LENGTH_SHORT).show();
+			break;
+		case CMENU_UNFAVOUR:
+			ModelFavour mff = new ModelFavour(new DBAdapter(this));
+			mff.removeItemByName(amain_ncontent.getSelectSingle());
+			Toast.makeText(MainActivity.this, res.getString(R.string.menu_new_success), Toast.LENGTH_SHORT).show();
 			break;
 		case CMENU_HIDE:
 			ModelHide mh = new ModelHide(new DBAdapter(this));

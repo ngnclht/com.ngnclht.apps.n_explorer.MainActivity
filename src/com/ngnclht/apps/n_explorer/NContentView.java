@@ -88,13 +88,13 @@ public class NContentView extends LinearLayout{
 	public void onGridListItemClick(AdapterView<?> parent, View view,
 			int position, long id){
 		if(!multiselect){
-			File des = new File(nf.getCurrentPath()+"/"+nf.getCurrentDirContent().get(position));
+			File des = new File(nf.getCurrentDirContentFullPath().get(position));
 			if (des!= null && des.isDirectory()) onFolderCliked(des);
 			else{
 				onFileClicked(des);
 			}
 		}else{
-			File des = new File(nf.getCurrentPath()+"/"+nf.getCurrentDirContent().get(position));
+			File des = new File(nf.getCurrentDirContentFullPath().get(position));
 			if(des != null && des.canRead()){
 				NFolderView folderView = ((NFolderView )view);
 				if(folderView.isItemSelected()){
@@ -314,6 +314,9 @@ public class NContentView extends LinearLayout{
 	}
 	public void updateView(){
 		nf.refresh();
+		notifyDataSetChanged();
+	}
+	public void notifyDataSetChanged(){
 		lga.notifyDataSetChanged();
 	}
 	public String getSelectSingle() {

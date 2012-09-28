@@ -66,7 +66,7 @@ public class ListGridAdapter extends BaseAdapter{
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
-		File f = new File(nf.getCurrentPath()+"/"+nf.getCurrentDirContent().get(position));
+		File f = new File(nf.getCurrentDirContentFullPath().get(position));
 		
 		NFolderView v = new NFolderView(context, null,f,mficon,mfstyle);
 		

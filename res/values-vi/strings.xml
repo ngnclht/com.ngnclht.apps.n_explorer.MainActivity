@@ -201,6 +201,8 @@
     <string name="amain_code_cmenu_selectall">Chọn tất cả</string>
     <string name="amain_code_cmenu_selectinvert">Chọn đảo ngược</string>
     <string name="amain_code_cmenu_setfavour">Thêm vào ưa thích</string>
+    <string name="amain_code_cmenu_unsetfavour">Xóa khỏi ưa thích</string>
+    <string name="amain_code_cmenu_unhide">Xóa khỏi d.sách ẩn</string>
     <string name="amain_code_cmenu_sethome">Đặt là thư mục gốc</string>
     <string name="amain_code_cmenu_shortcut">Tạo lối tắt</string>
     

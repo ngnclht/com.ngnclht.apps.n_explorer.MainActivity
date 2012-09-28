@@ -27,6 +27,13 @@ public class ModelFavour {
 			return false;
 		}
 	}
+	public void removeItemByName(String name){
+		SQLiteDatabase db = dba.getDb();
+		db.delete(DBAdapter.TABLE_FAVOUR, DBAdapter.KEY_TABLE_FAVOUR_PATH + " = ?",
+				new String[] { String.valueOf(name) });
+
+		db.close();
+	}
 	public ArrayList<String> getAllItem() {
 		ArrayList<String> tmp = new ArrayList<String>();
 		Cursor cursor = db.query(DBAdapter.TABLE_FAVOUR, new String[] { 
